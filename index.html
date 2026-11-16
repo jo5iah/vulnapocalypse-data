@@ -203,7 +203,8 @@ It lists the sources and the measured quantities, and shows how every model para
 the known biases in the source data and shows the shape of the inflow. It then tests the model against the
 catalog and the corpus. Snapshot: **2026-11-16**.
 
-Acquisition is in `VulnData.ipynb`. It queries the sources, caches every response under `data/`, writes
+Acquisition is in `VulnData.ipynb`, in the
+[vulnapocalypse-data](https://github.com/jo5iah/vulnapocalypse-data) repository. It queries the sources, caches every response under `data/`, writes
 every model input and draws the figure on this page. Visualization and section numbers refer to the model
 document. Bracketed numbers refer to its
 [reference list](https://jo5iah.github.io/vulnapocalypse-modeling/#references).
@@ -239,8 +240,8 @@ Contents
 | Anthropic *n-days* [9]; CVE-Genie [10]; Pesoli, Errico & Cavallaro [11] | machine-generated exploits under an hour after a patch ships; reproduction at a few dollars per CVE and privilege-escalation chains at about $2,000 each; the caveat that these are reproductions rather than production chains | the throughput axis of Visualization 6; Future work §4 |
 | FIRST EPSS [14] | exploit-prediction scores | Limitation 1; Future work §1 |
 
-Two analyses sit beside the model. `anchor_gap.py` reproduces the anchor correction below in full.
-`product_ranks.py` builds the per-product rankings quoted in the model's executive summary, and writes
+Two analyses sit beside the model. [`anchor_gap.py`](https://github.com/jo5iah/vulnapocalypse-modeling/blob/main/anchor_gap.py), in the model repository, reproduces the anchor
+correction below in full. `product_ranks.py`, in this one, builds the per-product rankings quoted in the model's executive summary, and writes
 `product_ranks_<snapshot>.md` as a standalone report. The rankings are not model outputs. Nothing in the
 model depends on them.
 
@@ -367,7 +368,7 @@ The remaining widening places the ratio of supply to capacity near 0.5 to 1. The
 model's +82% at a ratio of 1 (+59% at 2). Single years swing by about twenty points on cataloging policy
 (−1%, +32%, +38%), so they are not used alone. A rate of weaponization that is itself rising would produce
 the same pattern at higher saturation. This comparison places the ratio; it does not measure it.
-`anchor_gap.py` reproduces it.
+[`anchor_gap.py`](https://github.com/jo5iah/vulnapocalypse-modeling/blob/main/anchor_gap.py) reproduces it.
 
 **The daily columns oscillate on a monthly beat.** Smoothed publication moves between about 360 and 690 a
 day inside the measured interior, as vendor releases arrive. A centered 7-day mean removes the weekly cycle.

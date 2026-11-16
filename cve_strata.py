@@ -2,7 +2,7 @@
 
 One row per CVE: publication date, vendor, product families, CVSS exposure fields, severity,
 weakness types, CISA's SSVC decision points and the KEV addition date. Everything the model's
-planned stratification needs (plan.md step 2) is a group-by over this table.
+planned stratification needs (plan.md step 2, in vulnapocalypse-modeling) is a group-by over this table.
 
     python3 cve_strata.py build  --start 2025-11-16 --end 2026-11-16   # full sweep, ~1 h unkeyed
     python3 cve_strata.py update                                       # only what changed since
