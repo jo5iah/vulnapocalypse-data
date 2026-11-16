@@ -9,7 +9,7 @@ catalog and the corpus. Snapshot: **2026-11-16**.
 
 Acquisition is in `VulnData.ipynb`, in the
 [vulnapocalypse-data](https://github.com/jo5iah/vulnapocalypse-data) repository. It queries the sources, caches every response under `data/`, writes
-every model input and draws the figure on this page. Visualization and section numbers refer to the model
+every model input and draws the figures on this page. Visualization and section numbers refer to the model
 document. Bracketed numbers refer to its
 [reference list](https://jo5iah.github.io/vulnapocalypse-modeling/#references).
 
@@ -26,6 +26,7 @@ Contents
     - [3. Backlog size](#3-backlog-size)
     - [4. Is discovery supply-limited?](#4-is-discovery-supply-limited)
     - [How independent the checks are](#how-independent-the-checks-are)
+- [Stratification by product type](#stratification-by-product-type)
 
 ## Sources
 
@@ -262,3 +263,74 @@ lag from publication to listing is 216 days.
 The exit kernel is tested only loosely. The ratio of anchor to model is flat, at 0.86 to 0.89, for
 $1/\lambda$ anywhere from 3 to 8 years. It falls to 0.81 at 12 years and 0.69 at 20. The anchor excludes a
 decade-plus horizon, but it cannot choose a value inside 3–8.
+
+## Stratification by product type
+
+The model's conversion is one rate for the whole ecosystem: 3.0 KEV additions per 1,000 CVEs published in
+the 365 days to the snapshot. This section splits that rate by what the affected product is for. It is a
+measurement, not yet a model input: the model document's step 2 will decide which classes to carry.
+
+`cve_strata.py` gives every CVE a product type, `ptype`, in the per-CVE table `data/cve_strata.csv.gz`:
+
+| `ptype` | What it holds |
+|---|---|
+| `os` | Operating systems and hypervisors: Windows, the Linux kernel and distributions, macOS, iOS, Android, ESXi |
+| `prodserver` | Productivity servers, the software people do their work through: mail, collaboration, content management, file transfer, ERP and CRM, source control and CI, help desk, telephony. SharePoint is one |
+| `client` | Client and user applications: browsers, office suites, document readers, media, messaging |
+| `edge` | Edge devices: firewalls, VPN and remote-access gateways, load balancers, routers, enterprise and consumer |
+| `other` | Everything else: middleware, databases, management and backup servers, AI and workflow servers, libraries, chipsets, IoT, NAS and industrial control |
+
+The type comes from NVD's CPE product names, by an ordered list of rules in the script. Every KEV entry has
+CPE. Only 42.8% of the year's publications do. The rest are typed from the vendor: 9.2% by a vendor that
+ships one type, 7.9% in proportion to their vendor's typed CVEs, and 32.5% from long-tail vendors counted as
+*other*. The last 7.7% name no vendor and follow the overall mix. Rates below use these imputed
+denominators. The same rates on CPE-typed publications alone are upper bounds, and the truth lies between.
+The full tables, including the per-family ones, are in
+[`cve_stratification_2026-11-16.md`](https://github.com/jo5iah/vulnapocalypse-data/blob/main/cve_stratification_2026-11-16.md).
+
+![KEV additions per 1,000 CVEs published, by product type, with Poisson intervals and the CPE-only upper
+bound; and each type's share of publications against its share of KEV additions](figure:ptype_conversion)
+
+**Edge devices and productivity servers convert far above everything else.** Edge devices are 3% of
+publications and 23% of KEV additions: 20.5 per 1,000, with a 95% interval of 16.1 to 25.7. Productivity
+servers are 7% and 20%: 9.1 per 1,000, 7.0 to 11.6. Operating systems (2.5), client applications (2.3) and
+everything else (1.7) sit at or below the population rate, and the first two cannot be told apart. The
+ordering of the top two survives the CPE-only denominator, 44.9 and 15.0, and survives typing the KEV entries
+from CISA's own product names instead, which moves no count by more than four. A single population rate puts
+33% of KEV additions in the wrong product type.
+
+Type is not a restatement of exposure. Among CVEs that are remote and need neither privileges nor user
+action, edge devices convert at 54 of 629, productivity servers at 45 of 1,007, and the rest at 86 of
+11,593. Those counts are CPE-typed on both sides. Operating-system entries are the reverse case: 28 of the
+year's 45 are local, the second stage of an intrusion and not its entry.
+
+![Share of each year's KEV additions by product type, 2021 to 2026](figure:ptype_composition)
+
+The table has no publication counts by type before its floor, so earlier years show composition only. Edge
+devices have held 14% to 22% of additions in every year of the catalog. Productivity servers held 13% to 16%
+in 2023 through 2025 and 22% in 2026, so this year's rate for them leans high. Client applications fell
+from 25% in 2022 to 7%, and operating systems from 22–28% to 13% in 2026. KEV's intake is set partly by
+CISA's cataloging policy (555 additions in 2022, 187 in 2023), so one year's share is weak evidence and the
+multi-year pattern is the finding.
+
+![Four shares of each type's KEV entries: known ransomware use, remote unauthenticated exposure, listing
+within seven days of publication, and concentration in the five most-listed products](figure:ptype_profile)
+
+The types are exploited differently. Client and operating-system entries are listed almost at once: 83% and
+64% within seven days of publication, which is exploitation before or at disclosure. Productivity servers
+are the slowest, 33% within seven days and a median of 25 days, and carry the most ransomware use, 33%.
+Their exploitation follows the patch. Operating systems and clients are also concentrated: five products
+hold 72% and 56% of their entries. No edge product stands for edge devices, where five hold 15%.
+
+![The six families with the most KEV additions in the window for each product type, with the number of CVEs
+published for the family](figure:ptype_top_families)
+
+Within a type the counts are small, and the label on each bar is the reason to distrust its rate: 5 of 23
+and 8 of 184 are both real, and only the second is a rate. SharePoint has the most additions of any
+productivity server this year, 8, and with Exchange the most in the whole catalog, 20. It is also the only
+heavily exploited one with enough published CVEs to estimate anything from. Its 43 per 1,000 [19, 86] is
+above its type's 9.1, and its eight additions follow three in each of 2024 and 2025.
+
+Three limits apply to everything in this section. The rules are a judgment about product names, and moving
+a product family between types moves both counts. Published counts depend on NVD's CPE analysis, which lags
+most for the most recent months. And KEV records what CISA cataloged, not what was exploited.

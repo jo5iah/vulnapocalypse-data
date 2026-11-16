@@ -14,13 +14,13 @@ which includes this repository as the submodule `vulnapocalypse-data` and reads 
 
 | File | Description |
 |---|---|
-| `index.html` | The data page, self-contained: text, figure, fonts and libraries are inlined, so it makes no network requests. Served by GitHub Pages. |
+| `index.html` | The data page, self-contained: text, figures, fonts and libraries are inlined, so it makes no network requests. Served by GitHub Pages. |
 | `VulnData.md` | The data page's text, the only written account of the data. |
-| `VulnData.ipynb` | Data acquisition. Queries NVD for the CVE corpus, publication rates and the 2008-to-present history (yearly, monthly and daily), CISA KEV for observed exploitation, and MITRE for disclosure timestamps. Writes every input the model reads, and draws the inflow figure on the data page. Responses are cached; the snapshot date (`AS_OF`) is the single control at the top. |
+| `VulnData.ipynb` | Data acquisition. Queries NVD for the CVE corpus, publication rates and the 2008-to-present history (yearly, monthly and daily), CISA KEV for observed exploitation, and MITRE for disclosure timestamps. Writes every input the model reads, and draws the figures on the data page: the inflow figure, and the four product-type figures of its last section, which read `data/cve_ptype_<snapshot>.json`. Responses are cached; the snapshot date (`AS_OF`) is the single control at the top. |
 | `data/` | Cached API responses, one set per snapshot, and the derived inputs: `derived_params.json` (measured quantities), `global_history.json` (per-year publication rates), `trend_series_<snapshot>.json` and `trend_daily_<snapshot>.json` (monthly and daily series), `sharepoint_union.json` (the de-duplicated SharePoint CVE set). Delete a file to refetch it. |
 | `product_ranks.py` | Top products by CVE count and by observed exploitation, both from NVD's CPE applicability data, so the two rankings share one taxonomy. Writes `data/product_ranks_<snapshot>.json` and the report `product_ranks_<snapshot>.md`; `--report-only` rebuilds the report from the saved JSON. |
-| `cve_strata.py` | Per-CVE stratification table (`data/cve_strata.csv.gz`): vendor, product families, CVSS exposure fields, severity, CWE, SSVC decision points and KEV date for every CVE of the trailing year. `build` sweeps NVD, `update` refetches only modified records, `report` rebuilds the tables offline. |
-| `cve_stratification_<snapshot>.md` | KEV additions per 1,000 CVEs published, by exposure class, vendor, weakness type, severity and SSVC value. Input to step 2 of the model's plan. |
+| `cve_strata.py` | Per-CVE stratification table (`data/cve_strata.csv.gz`): vendor, product families, product type (`ptype`: os, prodserver, client, edge, other), CVSS exposure fields, severity, CWE, SSVC decision points and KEV date for every CVE of the trailing year. `build` sweeps NVD, `update` refetches only modified records, `retype` reapplies the product-type rules offline, `report` rebuilds the tables offline and writes `data/cve_ptype_<snapshot>.json` for the data page's figures. |
+| `cve_stratification_<snapshot>.md` | KEV additions per 1,000 CVEs published, by exposure class, vendor, product type, weakness type, severity and SSVC value, with the most-exploited families of each product type. Input to step 2 of the model's plan. |
 | `impact_ledger.py`, `impact/` | The exploitation-impact ledger: published counts of exposed instances, compromised hosts, victim organizations, attack volume and downtime per KEV entry, assembled from the research batches under `impact/`. |
 | `impact_ledger_<snapshot>.md` | The ledger so far. Partial (96 of 2026's 297 KEV additions); input to step 3 of the model's plan. |
 | `build_html.py`, `vendor/` | Build the page: `python build_html.py VulnData index`. `vendor/` holds KaTeX with its fonts and markdown-it. |
@@ -34,6 +34,7 @@ commit that introduced it.
 ```bash
 conda env create -f environment.yml && conda activate aysu
 jupyter lab VulnData.ipynb             # refresh the data; bump AS_OF for a new snapshot
+python3 cve_strata.py update && python3 cve_strata.py report   # refresh the stratification before section 9
 python build_html.py VulnData index    # rebuild index.html
 ```
 

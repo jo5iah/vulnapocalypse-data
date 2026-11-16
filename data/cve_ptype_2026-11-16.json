@@ -1,0 +1,907 @@
+{
+ "as_of": "2026-11-16",
+ "window_days": 365,
+ "published": 107720,
+ "kev_added": 321,
+ "kev_untyped": 0,
+ "catalog_snapshot": "cisa_kev_2026-11-16.json",
+ "coverage": {
+  "cpe": 0.4278685480876346,
+  "vendor": 0.09169142220571853,
+  "spread_by_vendor_mix": 0.07919606386929075,
+  "long_tail_to_other": 0.3245636836242109,
+  "no_vendor": 0.07668028221314518
+ },
+ "types": {
+  "os": {
+   "name": "operating system",
+   "published_cpe": 9011,
+   "published_vendor": 6129,
+   "published_imputed": 17776.4,
+   "kev_added": 45,
+   "share_published": 0.16502438299276992,
+   "share_kev": 0.14018691588785046,
+   "per_1000": 2.5314424082318077,
+   "per_1000_lo": 1.8464514632227647,
+   "per_1000_hi": 3.387269110306331,
+   "per_1000_cpe_only": 4.993896348906891,
+   "lift": 0.8494921377405928
+  },
+  "prodserver": {
+   "name": "productivity server",
+   "published_cpe": 4258,
+   "published_vendor": 1558,
+   "published_imputed": 7027.2,
+   "kev_added": 64,
+   "share_published": 0.06523620334353365,
+   "share_kev": 0.19937694704049844,
+   "per_1000": 9.107411326744542,
+   "per_1000_lo": 7.013816480473257,
+   "per_1000_hi": 11.629960942559276,
+   "per_1000_cpe_only": 15.03053076561766,
+   "lift": 3.056231614071408
+  },
+  "client": {
+   "name": "client / user app",
+   "published_cpe": 7242,
+   "published_vendor": 656,
+   "published_imputed": 9137.2,
+   "kev_added": 21,
+   "share_published": 0.08482400657301747,
+   "share_kev": 0.06542056074766354,
+   "per_1000": 2.2982865100295036,
+   "per_1000_lo": 1.4226755733386134,
+   "per_1000_hi": 3.51317506715285,
+   "per_1000_cpe_only": 2.899751449875725,
+   "lift": 0.7712505385058507
+  },
+  "edge": {
+   "name": "edge device",
+   "published_cpe": 1649,
+   "published_vendor": 1534,
+   "published_imputed": 3613.1,
+   "kev_added": 74,
+   "share_published": 0.033541696752730416,
+   "share_kev": 0.23052959501557632,
+   "per_1000": 20.48096176390578,
+   "per_1000_lo": 16.081960119413225,
+   "per_1000_hi": 25.711971964873587,
+   "per_1000_cpe_only": 44.875682231655546,
+   "lift": 6.872925860460842
+  },
+  "other": {
+   "name": "other",
+   "published_cpe": 23930,
+   "published_vendor": 0,
+   "published_imputed": 70166.0,
+   "kev_added": 117,
+   "share_published": 0.6513737103379145,
+   "share_kev": 0.3644859813084112,
+   "per_1000": 1.6674748437989904,
+   "per_1000_lo": 1.3790471272310878,
+   "per_1000_hi": 1.998424835529665,
+   "per_1000_cpe_only": 4.88926034266611,
+   "lift": 0.5595650784237609
+  }
+ },
+ "type_by_exposure": {
+  "os": {
+   "remote, no privileges, no user action": [
+    1386,
+    5
+   ],
+   "remote, other": [
+    982,
+    12
+   ],
+   "local or physical": [
+    6643,
+    28
+   ],
+   "unscored": [
+    0,
+    0
+   ]
+  },
+  "prodserver": {
+   "remote, no privileges, no user action": [
+    1007,
+    45
+   ],
+   "remote, other": [
+    2982,
+    19
+   ],
+   "local or physical": [
+    269,
+    0
+   ],
+   "unscored": [
+    0,
+    0
+   ]
+  },
+  "client": {
+   "remote, no privileges, no user action": [
+    788,
+    1
+   ],
+   "remote, other": [
+    4992,
+    15
+   ],
+   "local or physical": [
+    1462,
+    5
+   ],
+   "unscored": [
+    0,
+    0
+   ]
+  },
+  "edge": {
+   "remote, no privileges, no user action": [
+    629,
+    54
+   ],
+   "remote, other": [
+    913,
+    13
+   ],
+   "local or physical": [
+    107,
+    7
+   ],
+   "unscored": [
+    0,
+    0
+   ]
+  },
+  "other": {
+   "remote, no privileges, no user action": [
+    9419,
+    80
+   ],
+   "remote, other": [
+    10813,
+    28
+   ],
+   "local or physical": [
+    3697,
+    9
+   ],
+   "unscored": [
+    1,
+    0
+   ]
+  }
+ },
+ "kev_by_year_added": {
+  "2021": {
+   "os": 70,
+   "prodserver": 45,
+   "client": 48,
+   "edge": 43,
+   "other": 105
+  },
+  "2022": {
+   "os": 142,
+   "prodserver": 44,
+   "client": 140,
+   "edge": 99,
+   "other": 130
+  },
+  "2023": {
+   "os": 53,
+   "prodserver": 24,
+   "client": 16,
+   "edge": 32,
+   "other": 62
+  },
+  "2024": {
+   "os": 44,
+   "prodserver": 29,
+   "client": 17,
+   "edge": 35,
+   "other": 61
+  },
+  "2025": {
+   "os": 54,
+   "prodserver": 40,
+   "client": 13,
+   "edge": 52,
+   "other": 86
+  },
+  "2026": {
+   "os": 40,
+   "prodserver": 64,
+   "client": 20,
+   "edge": 66,
+   "other": 107
+  }
+ },
+ "kev_profile": {
+  "os": {
+   "entries": 403,
+   "remote_unauthenticated": 0.07444168734491315,
+   "local": 0.6898263027295285,
+   "automatable": 0.07444168734491315,
+   "ransomware": 0.18362282878411912,
+   "published_since_kev_opened": 207,
+   "lag_median_days": 0,
+   "within_7_days": 0.642512077294686,
+   "within_30_days": 0.714975845410628,
+   "after_a_year": 0.057971014492753624,
+   "products": 65,
+   "top5_share": 0.7220843672456576
+  },
+  "prodserver": {
+   "entries": 246,
+   "remote_unauthenticated": 0.6951219512195121,
+   "local": 0.04065040650406504,
+   "automatable": 0.6219512195121951,
+   "ransomware": 0.32926829268292684,
+   "published_since_kev_opened": 158,
+   "lag_median_days": 25.0,
+   "within_7_days": 0.3291139240506329,
+   "within_30_days": 0.5253164556962026,
+   "after_a_year": 0.056962025316455694,
+   "products": 120,
+   "top5_share": 0.24796747967479674
+  },
+  "client": {
+   "entries": 254,
+   "remote_unauthenticated": 0.16929133858267717,
+   "local": 0.2283464566929134,
+   "automatable": 0.09055118110236221,
+   "ransomware": 0.1220472440944882,
+   "published_since_kev_opened": 65,
+   "lag_median_days": 1,
+   "within_7_days": 0.8307692307692308,
+   "within_30_days": 0.9076923076923077,
+   "after_a_year": 0.0,
+   "products": 68,
+   "top5_share": 0.5551181102362205
+  },
+  "edge": {
+   "entries": 327,
+   "remote_unauthenticated": 0.7186544342507645,
+   "local": 0.04892966360856269,
+   "automatable": 0.6055045871559633,
+   "ransomware": 0.18960244648318042,
+   "published_since_kev_opened": 179,
+   "lag_median_days": 5,
+   "within_7_days": 0.5754189944134078,
+   "within_30_days": 0.7150837988826816,
+   "after_a_year": 0.07262569832402235,
+   "products": 173,
+   "top5_share": 0.1529051987767584
+  },
+  "other": {
+   "entries": 551,
+   "remote_unauthenticated": 0.647912885662432,
+   "local": 0.12522686025408347,
+   "automatable": 0.5825771324863884,
+   "ransomware": 0.20508166969147004,
+   "published_since_kev_opened": 291,
+   "lag_median_days": 18,
+   "within_7_days": 0.3745704467353952,
+   "within_30_days": 0.5601374570446735,
+   "after_a_year": 0.1134020618556701,
+   "products": 345,
+   "top5_share": 0.0998185117967332
+  }
+ },
+ "top_families": {
+  "os": [
+   {
+    "family": "microsoft:windows*",
+    "published": 3006,
+    "kev_added": 19,
+    "per_1000": 6.320691949434464,
+    "per_1000_lo": 3.805469449223796,
+    "per_1000_hi": 9.870543436987889,
+    "share_of_type": 0.4222222222222222,
+    "kev_catalog": 241,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 72,
+    "remote_unauthenticated": 0.05394190871369295,
+    "lag_median_days": 0
+   },
+   {
+    "family": "apple:ios*",
+    "published": 693,
+    "kev_added": 11,
+    "per_1000": 15.873015873015873,
+    "per_1000_lo": 7.923752333675087,
+    "per_1000_hi": 28.4012099759047,
+    "share_of_type": 0.24444444444444444,
+    "kev_catalog": 94,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.11702127659574468,
+    "lag_median_days": 1
+   },
+   {
+    "family": "apple:macos*",
+    "published": 1121,
+    "kev_added": 11,
+    "per_1000": 9.812667261373774,
+    "per_1000_lo": 4.898448142048917,
+    "per_1000_hi": 17.557572268779623,
+    "share_of_type": 0.24444444444444444,
+    "kev_catalog": 84,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.17857142857142858,
+    "lag_median_days": 1
+   },
+   {
+    "family": "linux:linux_kernel",
+    "published": 3338,
+    "kev_added": 9,
+    "per_1000": 2.696225284601558,
+    "per_1000_lo": 1.2328858889689418,
+    "per_1000_hi": 5.1182754497960365,
+    "share_of_type": 0.2,
+    "kev_catalog": 33,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 0.030303030303030304,
+    "lag_median_days": 105.5
+   },
+   {
+    "family": "apple:watchos",
+    "published": 316,
+    "kev_added": 8,
+    "per_1000": 25.31645569620253,
+    "per_1000_lo": 10.929848660596514,
+    "per_1000_hi": 49.883510190485175,
+    "share_of_type": 0.17777777777777778,
+    "kev_catalog": 47,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.10638297872340426,
+    "lag_median_days": 1
+   },
+   {
+    "family": "apple:tvos",
+    "published": 314,
+    "kev_added": 8,
+    "per_1000": 25.477707006369428,
+    "per_1000_lo": 10.999465531046173,
+    "per_1000_hi": 50.20123955475578,
+    "share_of_type": 0.17777777777777778,
+    "kev_catalog": 38,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.10526315789473684,
+    "lag_median_days": 1.0
+   },
+   {
+    "family": "apple:visionos",
+    "published": 432,
+    "kev_added": 6,
+    "per_1000": 13.88888888888889,
+    "per_1000_lo": 5.096977438636226,
+    "per_1000_hi": 30.230263941015476,
+    "share_of_type": 0.13333333333333333,
+    "kev_catalog": 17,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.23529411764705882,
+    "lag_median_days": 1
+   },
+   {
+    "family": "google:android",
+    "published": 722,
+    "kev_added": 4,
+    "per_1000": 5.54016620498615,
+    "per_1000_lo": 1.5095088277372901,
+    "per_1000_hi": 14.185025866210108,
+    "share_of_type": 0.08888888888888889,
+    "kev_catalog": 21,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.047619047619047616,
+    "lag_median_days": 1
+   }
+  ],
+  "prodserver": [
+   {
+    "family": "microsoft:sharepoint*",
+    "published": 184,
+    "kev_added": 8,
+    "per_1000": 43.47826086956522,
+    "per_1000_lo": 18.770827047546188,
+    "per_1000_hi": 85.6695066314854,
+    "share_of_type": 0.125,
+    "kev_catalog": 20,
+    "years_with_additions": 5,
+    "catalog_years": 6,
+    "ransomware": 8,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 24.5
+   },
+   {
+    "family": "synacor:zimbra_collaboration_suite",
+    "published": 23,
+    "kev_added": 5,
+    "per_1000": 217.3913043478261,
+    "per_1000_lo": 70.5863647877575,
+    "per_1000_hi": 507.3187860575072,
+    "share_of_type": 0.078125,
+    "kev_catalog": 18,
+    "years_with_additions": 5,
+    "catalog_years": 6,
+    "ransomware": 6,
+    "remote_unauthenticated": 0.4444444444444444,
+    "lag_median_days": 51.5
+   },
+   {
+    "family": "gitlab:gitlab",
+    "published": 267,
+    "kev_added": 4,
+    "per_1000": 14.9812734082397,
+    "per_1000_lo": 4.081892785117316,
+    "per_1000_hi": 38.358010020238574,
+    "share_of_type": 0.0625,
+    "kev_catalog": 6,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 1.0,
+    "lag_median_days": 63.0
+   },
+   {
+    "family": "wordpress:wordpress",
+    "published": 4,
+    "kev_added": 4,
+    "per_1000": 1000.0,
+    "per_1000_lo": 272.46634340658085,
+    "per_1000_hi": 2560.3971688509246,
+    "share_of_type": 0.0625,
+    "kev_catalog": 5,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 1.0,
+    "lag_median_days": 3.5
+   },
+   {
+    "family": "jfrog:artifactory",
+    "published": 38,
+    "kev_added": 4,
+    "per_1000": 105.26315789473684,
+    "per_1000_lo": 28.68066772700851,
+    "per_1000_hi": 269.5154914579921,
+    "share_of_type": 0.0625,
+    "kev_catalog": 4,
+    "years_with_additions": 1,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 22.5
+   },
+   {
+    "family": "adobe:commerce*",
+    "published": 73,
+    "kev_added": 3,
+    "per_1000": 41.0958904109589,
+    "per_1000_lo": 8.474960587610974,
+    "per_1000_hi": 120.0996310923606,
+    "share_of_type": 0.046875,
+    "kev_catalog": 6,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.8333333333333334,
+    "lag_median_days": 39.0
+   },
+   {
+    "family": "solarwinds:web_help_desk",
+    "published": 8,
+    "kev_added": 3,
+    "per_1000": 375.0,
+    "per_1000_lo": 77.33401536195014,
+    "per_1000_hi": 1095.9091337177904,
+    "share_of_type": 0.046875,
+    "kev_catalog": 5,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 1.0,
+    "lag_median_days": 15
+   },
+   {
+    "family": "smartertools:smartermail",
+    "published": 6,
+    "kev_added": 3,
+    "per_1000": 500.0,
+    "per_1000_lo": 103.11202048260019,
+    "per_1000_hi": 1461.212178290387,
+    "share_of_type": 0.046875,
+    "kev_catalog": 3,
+    "years_with_additions": 1,
+    "catalog_years": 6,
+    "ransomware": 3,
+    "remote_unauthenticated": 1.0,
+    "lag_median_days": 13
+   }
+  ],
+  "client": [
+   {
+    "family": "google:chrome",
+    "published": 3968,
+    "kev_added": 10,
+    "per_1000": 2.5201612903225805,
+    "per_1000_lo": 1.2085152964043429,
+    "per_1000_hi": 4.634666341234319,
+    "share_of_type": 0.47619047619047616,
+    "kev_catalog": 78,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.02564102564102564,
+    "lag_median_days": 1
+   },
+   {
+    "family": "microsoft:office*",
+    "published": 605,
+    "kev_added": 7,
+    "per_1000": 11.570247933884298,
+    "per_1000_lo": 4.651839754578291,
+    "per_1000_hi": 23.83913282926013,
+    "share_of_type": 0.3333333333333333,
+    "kev_catalog": 49,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 5,
+    "remote_unauthenticated": 0.04081632653061224,
+    "lag_median_days": 0.0
+   },
+   {
+    "family": "apple:safari",
+    "published": 126,
+    "kev_added": 6,
+    "per_1000": 47.61904761904762,
+    "per_1000_lo": 17.47535121818135,
+    "per_1000_hi": 103.64661922633877,
+    "share_of_type": 0.2857142857142857,
+    "kev_catalog": 28,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.07142857142857142,
+    "lag_median_days": 0.0
+   },
+   {
+    "family": "adobe:acrobat*",
+    "published": 68,
+    "kev_added": 3,
+    "per_1000": 44.11764705882353,
+    "per_1000_lo": 9.098119454347074,
+    "per_1000_hi": 128.93048631974006,
+    "share_of_type": 0.14285714285714285,
+    "kev_catalog": 27,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 0.14814814814814814,
+    "lag_median_days": 2
+   },
+   {
+    "family": "webkitgtk:webkitgtk",
+    "published": 0,
+    "kev_added": 3,
+    "per_1000": null,
+    "per_1000_lo": null,
+    "per_1000_hi": null,
+    "share_of_type": 0.14285714285714285,
+    "kev_catalog": 9,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.1111111111111111,
+    "lag_median_days": 17.5
+   },
+   {
+    "family": "wpewebkit:wpe_webkit",
+    "published": 0,
+    "kev_added": 3,
+    "per_1000": null,
+    "per_1000_lo": null,
+    "per_1000_hi": null,
+    "share_of_type": 0.14285714285714285,
+    "kev_catalog": 7,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.0,
+    "lag_median_days": 17.5
+   },
+   {
+    "family": "microsoft:internet_explorer",
+    "published": 0,
+    "kev_added": 2,
+    "per_1000": null,
+    "per_1000_lo": null,
+    "per_1000_hi": null,
+    "share_of_type": 0.09523809523809523,
+    "kev_catalog": 43,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 8,
+    "remote_unauthenticated": 0.16279069767441862,
+    "lag_median_days": null
+   },
+   {
+    "family": "microsoft:edge_chromium",
+    "published": 114,
+    "kev_added": 1,
+    "per_1000": 8.771929824561404,
+    "per_1000_lo": 0.2220860349499109,
+    "per_1000_hi": 48.874064832797345,
+    "share_of_type": 0.047619047619047616,
+    "kev_catalog": 9,
+    "years_with_additions": 5,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.0,
+    "lag_median_days": 2.5
+   }
+  ],
+  "edge": [
+   {
+    "family": "cisco:sd-wan*",
+    "published": 14,
+    "kev_added": 9,
+    "per_1000": 642.8571428571429,
+    "per_1000_lo": 293.9552212413091,
+    "per_1000_hi": 1220.343103672798,
+    "share_of_type": 0.12162162162162163,
+    "kev_catalog": 10,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 2.5
+   },
+   {
+    "family": "citrix:netscaler*",
+    "published": 17,
+    "kev_added": 6,
+    "per_1000": 352.94117647058823,
+    "per_1000_lo": 129.52319138181468,
+    "per_1000_hi": 768.204354265805,
+    "share_of_type": 0.08108108108108109,
+    "kev_catalog": 23,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 4,
+    "remote_unauthenticated": 0.8260869565217391,
+    "lag_median_days": 0.0
+   },
+   {
+    "family": "paloaltonetworks:pan-os",
+    "published": 29,
+    "kev_added": 6,
+    "per_1000": 206.89655172413794,
+    "per_1000_lo": 75.92738805140861,
+    "per_1000_hi": 450.3266904316788,
+    "share_of_type": 0.08108108108108109,
+    "kev_catalog": 17,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 6,
+    "remote_unauthenticated": 0.7058823529411765,
+    "lag_median_days": 4.0
+   },
+   {
+    "family": "fortinet:fortios*",
+    "published": 26,
+    "kev_added": 5,
+    "per_1000": 192.30769230769232,
+    "per_1000_lo": 62.441784235323944,
+    "per_1000_hi": 448.7820030508718,
+    "share_of_type": 0.06756756756756757,
+    "kev_catalog": 21,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 13,
+    "remote_unauthenticated": 0.7142857142857143,
+    "lag_median_days": 3.5
+   },
+   {
+    "family": "cisco:asa_ftd*",
+    "published": 48,
+    "kev_added": 5,
+    "per_1000": 104.16666666666667,
+    "per_1000_lo": 33.822633127467135,
+    "per_1000_hi": 243.09025165255557,
+    "share_of_type": 0.06756756756756757,
+    "kev_catalog": 20,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 6,
+    "remote_unauthenticated": 0.7,
+    "lag_median_days": 0
+   },
+   {
+    "family": "sonicwall:sma*",
+    "published": 9,
+    "kev_added": 5,
+    "per_1000": 555.5555555555555,
+    "per_1000_lo": 180.38737667982474,
+    "per_1000_hi": 1296.481342146963,
+    "share_of_type": 0.06756756756756757,
+    "kev_catalog": 15,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 7,
+    "remote_unauthenticated": 0.6,
+    "lag_median_days": 1.0
+   },
+   {
+    "family": "checkpoint:gaia_quantum*",
+    "published": 5,
+    "kev_added": 5,
+    "per_1000": 1000.0,
+    "per_1000_lo": 324.69727802368453,
+    "per_1000_hi": 2333.6664158645335,
+    "share_of_type": 0.06756756756756757,
+    "kev_catalog": 6,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 0.8333333333333334,
+    "lag_median_days": 0.5
+   },
+   {
+    "family": "arista:velocloud_orchestrator",
+    "published": 4,
+    "kev_added": 4,
+    "per_1000": 1000.0,
+    "per_1000_lo": 272.46634340658085,
+    "per_1000_hi": 2560.3971688509246,
+    "share_of_type": 0.05405405405405406,
+    "kev_catalog": 4,
+    "years_with_additions": 1,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 0.5
+   }
+  ],
+  "other": [
+   {
+    "family": "langflow:langflow",
+    "published": 211,
+    "kev_added": 5,
+    "per_1000": 23.696682464454977,
+    "per_1000_lo": 7.694248294400107,
+    "per_1000_hi": 55.30015203470458,
+    "share_of_type": 0.042735042735042736,
+    "kev_catalog": 6,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.6666666666666666,
+    "lag_median_days": 23.0
+   },
+   {
+    "family": "plex:media_server",
+    "published": 9,
+    "kev_added": 4,
+    "per_1000": 444.44444444444446,
+    "per_1000_lo": 121.09615262514704,
+    "per_1000_hi": 1137.9542972670777,
+    "share_of_type": 0.03418803418803419,
+    "kev_catalog": 5,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.2,
+    "lag_median_days": 27.0
+   },
+   {
+    "family": "litellm:litellm",
+    "published": 24,
+    "kev_added": 4,
+    "per_1000": 166.66666666666666,
+    "per_1000_lo": 45.41105723443014,
+    "per_1000_hi": 426.7328614751541,
+    "share_of_type": 0.03418803418803419,
+    "kev_catalog": 4,
+    "years_with_additions": 1,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 17.0
+   },
+   {
+    "family": "ivanti:endpoint_manager_mobile",
+    "published": 8,
+    "kev_added": 3,
+    "per_1000": 375.0,
+    "per_1000_lo": 77.33401536195014,
+    "per_1000_hi": 1095.9091337177904,
+    "share_of_type": 0.02564102564102564,
+    "kev_catalog": 8,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 0.625,
+    "lag_median_days": 3.0
+   },
+   {
+    "family": "n-able:n-central",
+    "published": 3,
+    "kev_added": 3,
+    "per_1000": 1000.0,
+    "per_1000_lo": 206.22404096520037,
+    "per_1000_hi": 2922.424356580774,
+    "share_of_type": 0.02564102564102564,
+    "kev_catalog": 5,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.6,
+    "lag_median_days": 1
+   },
+   {
+    "family": "papercut:ng_mf*",
+    "published": 6,
+    "kev_added": 3,
+    "per_1000": 500.0,
+    "per_1000_lo": 103.11202048260019,
+    "per_1000_hi": 1461.212178290387,
+    "share_of_type": 0.02564102564102564,
+    "kev_catalog": 5,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 0.6,
+    "lag_median_days": 3
+   },
+   {
+    "family": "simple-help:simplehelp",
+    "published": 1,
+    "kev_added": 3,
+    "per_1000": 3000.0,
+    "per_1000_lo": 618.6721228956011,
+    "per_1000_hi": 8767.273069742323,
+    "share_of_type": 0.02564102564102564,
+    "kev_catalog": 4,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 3,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 246.5
+   },
+   {
+    "family": "vmware:cloud_foundation",
+    "published": 6,
+    "kev_added": 2,
+    "per_1000": 333.3333333333333,
+    "per_1000_lo": 40.36821309066079,
+    "per_1000_hi": 1204.1146112873264,
+    "share_of_type": 0.017094017094017096,
+    "kev_catalog": 19,
+    "years_with_additions": 5,
+    "catalog_years": 6,
+    "ransomware": 8,
+    "remote_unauthenticated": 0.5789473684210527,
+    "lag_median_days": 18.5
+   }
+  ]
+ }
+}
