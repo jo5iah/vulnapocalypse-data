@@ -1,102 +1,116 @@
 {
  "as_of": "2026-11-16",
  "window_days": 365,
- "published": 107720,
+ "published": 107834,
  "kev_added": 321,
  "kev_untyped": 0,
  "catalog_snapshot": "cisa_kev_2026-11-16.json",
  "coverage": {
-  "cpe": 0.4278685480876346,
-  "vendor": 0.09169142220571853,
-  "spread_by_vendor_mix": 0.07919606386929075,
-  "long_tail_to_other": 0.3245636836242109,
-  "no_vendor": 0.07668028221314518
+  "cpe": 0.4285661294211473,
+  "vendor": 0.09351410501326113,
+  "spread_by_vendor_mix": 0.07763785077062893,
+  "long_tail_to_other": 0.3236641504534748,
+  "no_vendor": 0.07661776434148784
  },
  "types": {
   "os": {
    "name": "operating system",
-   "published_cpe": 9011,
+   "published_cpe": 9010,
    "published_vendor": 6129,
-   "published_imputed": 17776.4,
-   "kev_added": 45,
-   "share_published": 0.16502438299276992,
-   "share_kev": 0.14018691588785046,
-   "per_1000": 2.5314424082318077,
-   "per_1000_lo": 1.8464514632227647,
-   "per_1000_hi": 3.387269110306331,
-   "per_1000_cpe_only": 4.993896348906891,
-   "lift": 0.8494921377405928
+   "published_imputed": 17605.5,
+   "kev_added": 42,
+   "share_published": 0.16326484039802147,
+   "share_kev": 0.1308411214953271,
+   "per_1000": 2.3856180223649153,
+   "per_1000_lo": 1.7193436345401385,
+   "per_1000_hi": 3.224662531620042,
+   "per_1000_cpe_only": 4.661487236403995,
+   "lift": 0.8014041552140132
   },
   "prodserver": {
    "name": "productivity server",
-   "published_cpe": 4258,
-   "published_vendor": 1558,
-   "published_imputed": 7027.2,
-   "kev_added": 64,
-   "share_published": 0.06523620334353365,
-   "share_kev": 0.19937694704049844,
-   "per_1000": 9.107411326744542,
-   "per_1000_lo": 7.013816480473257,
-   "per_1000_hi": 11.629960942559276,
-   "per_1000_cpe_only": 15.03053076561766,
-   "lift": 3.056231614071408
+   "published_cpe": 4274,
+   "published_vendor": 1546,
+   "published_imputed": 7000.3,
+   "kev_added": 65,
+   "share_published": 0.0649172841758356,
+   "share_kev": 0.20249221183800623,
+   "per_1000": 9.285329048266549,
+   "per_1000_lo": 7.16622092890438,
+   "per_1000_hi": 11.834914099802,
+   "per_1000_cpe_only": 15.208235844642022,
+   "lift": 3.1192341825257786
   },
   "client": {
    "name": "client / user app",
-   "published_cpe": 7242,
+   "published_cpe": 7297,
    "published_vendor": 656,
-   "published_imputed": 9137.2,
-   "kev_added": 21,
-   "share_published": 0.08482400657301747,
-   "share_kev": 0.06542056074766354,
-   "per_1000": 2.2982865100295036,
-   "per_1000_lo": 1.4226755733386134,
-   "per_1000_hi": 3.51317506715285,
-   "per_1000_cpe_only": 2.899751449875725,
-   "lift": 0.7712505385058507
+   "published_imputed": 9204.1,
+   "kev_added": 27,
+   "share_published": 0.08535403680947655,
+   "share_kev": 0.08411214953271028,
+   "per_1000": 2.9334857512137797,
+   "per_1000_lo": 1.9331855944612801,
+   "per_1000_hi": 4.268067754056103,
+   "per_1000_cpe_only": 3.7001507468822803,
+   "lift": 0.9854501635401456
   },
   "edge": {
    "name": "edge device",
-   "published_cpe": 1649,
+   "published_cpe": 1687,
    "published_vendor": 1534,
-   "published_imputed": 3613.1,
-   "kev_added": 74,
-   "share_published": 0.033541696752730416,
-   "share_kev": 0.23052959501557632,
-   "per_1000": 20.48096176390578,
-   "per_1000_lo": 16.081960119413225,
-   "per_1000_hi": 25.711971964873587,
-   "per_1000_cpe_only": 44.875682231655546,
-   "lift": 6.872925860460842
+   "published_imputed": 3654.0,
+   "kev_added": 73,
+   "share_published": 0.03388560196668284,
+   "share_kev": 0.22741433021806853,
+   "per_1000": 19.977996822827713,
+   "per_1000_lo": 15.659560397517643,
+   "per_1000_hi": 25.119331618547303,
+   "per_1000_cpe_only": 43.27208061647896,
+   "lift": 6.71123772396512
+  },
+  "mgmt": {
+   "name": "infrastructure management",
+   "published_cpe": 1096,
+   "published_vendor": 219,
+   "published_imputed": 1735.8,
+   "kev_added": 41,
+   "share_published": 0.01609738065593069,
+   "share_kev": 0.1277258566978193,
+   "per_1000": 23.619621154934865,
+   "per_1000_lo": 16.949847935531047,
+   "per_1000_hi": 32.04268313541964,
+   "per_1000_cpe_only": 37.40875912408759,
+   "lift": 7.934573917823196
   },
   "other": {
    "name": "other",
-   "published_cpe": 23930,
+   "published_cpe": 22850,
    "published_vendor": 0,
-   "published_imputed": 70166.0,
-   "kev_added": 117,
-   "share_published": 0.6513737103379145,
-   "share_kev": 0.3644859813084112,
-   "per_1000": 1.6674748437989904,
-   "per_1000_lo": 1.3790471272310878,
-   "per_1000_hi": 1.998424835529665,
-   "per_1000_cpe_only": 4.88926034266611,
-   "lift": 0.5595650784237609
+   "published_imputed": 68634.3,
+   "kev_added": 73,
+   "share_published": 0.6364808559941033,
+   "share_kev": 0.22741433021806853,
+   "per_1000": 1.0636084998544968,
+   "per_1000_lo": 0.8336992787862085,
+   "per_1000_hi": 1.3373280042582942,
+   "per_1000_cpe_only": 3.1947483588621446,
+   "lift": 0.35729956066451657
   }
  },
  "type_by_exposure": {
   "os": {
    "remote, no privileges, no user action": [
-    1386,
+    1396,
     5
    ],
    "remote, other": [
-    982,
-    12
+    978,
+    10
    ],
    "local or physical": [
-    6643,
-    28
+    6636,
+    27
    ],
    "unscored": [
     0,
@@ -105,11 +119,11 @@
   },
   "prodserver": {
    "remote, no privileges, no user action": [
-    1007,
-    45
+    1008,
+    46
    ],
    "remote, other": [
-    2982,
+    2997,
     19
    ],
    "local or physical": [
@@ -123,33 +137,15 @@
   },
   "client": {
    "remote, no privileges, no user action": [
-    788,
-    1
+    789,
+    2
    ],
    "remote, other": [
-    4992,
-    15
+    5042,
+    18
    ],
    "local or physical": [
-    1462,
-    5
-   ],
-   "unscored": [
-    0,
-    0
-   ]
-  },
-  "edge": {
-   "remote, no privileges, no user action": [
-    629,
-    54
-   ],
-   "remote, other": [
-    913,
-    13
-   ],
-   "local or physical": [
-    107,
+    1466,
     7
    ],
    "unscored": [
@@ -157,18 +153,54 @@
     0
    ]
   },
-  "other": {
+  "edge": {
    "remote, no privileges, no user action": [
-    9419,
-    80
+    647,
+    54
    ],
    "remote, other": [
-    10813,
-    28
+    932,
+    13
    ],
    "local or physical": [
-    3697,
-    9
+    108,
+    6
+   ],
+   "unscored": [
+    0,
+    0
+   ]
+  },
+  "mgmt": {
+   "remote, no privileges, no user action": [
+    285,
+    29
+   ],
+   "remote, other": [
+    623,
+    8
+   ],
+   "local or physical": [
+    188,
+    4
+   ],
+   "unscored": [
+    0,
+    0
+   ]
+  },
+  "other": {
+   "remote, no privileges, no user action": [
+    9121,
+    49
+   ],
+   "remote, other": [
+    10211,
+    19
+   ],
+   "local or physical": [
+    3517,
+    5
    ],
    "unscored": [
     1,
@@ -176,120 +208,828 @@
    ]
   }
  },
+ "inside_other": {
+  "published": 57752,
+  "with_cpe": 22850,
+  "by_channel": {
+   "vendor or project CNA": {
+    "published": 15225,
+    "with_cpe": 9987,
+    "kev_added": 32,
+    "kev_catalog": 196
+   },
+   "GitHub advisory": {
+    "published": 12107,
+    "with_cpe": 6153,
+    "kev_added": 19,
+    "kev_catalog": 31
+   },
+   "WordPress CNA": {
+    "published": 10934,
+    "with_cpe": 152,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "VulnCheck": {
+    "published": 8677,
+    "with_cpe": 2129,
+    "kev_added": 2,
+    "kev_catalog": 6
+   },
+   "VulDB": {
+    "published": 4670,
+    "with_cpe": 1354,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "CISA or national CERT": {
+    "published": 3159,
+    "with_cpe": 844,
+    "kev_added": 7,
+    "kev_catalog": 19
+   },
+   "MITRE": {
+    "published": 2189,
+    "with_cpe": 1842,
+    "kev_added": 10,
+    "kev_catalog": 87
+   },
+   "research or bounty CNA": {
+    "published": 791,
+    "with_cpe": 389,
+    "kev_added": 3,
+    "kev_catalog": 7
+   }
+  },
+  "by_cpe_part": {
+   "(no CPE)": {
+    "published": 34902,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "a": {
+    "published": 20803,
+    "with_cpe": 20803,
+    "kev_added": 62,
+    "kev_catalog": 250
+   },
+   "o": {
+    "published": 1771,
+    "with_cpe": 1771,
+    "kev_added": 4,
+    "kev_catalog": 52
+   },
+   "a|o": {
+    "published": 275,
+    "with_cpe": 275,
+    "kev_added": 7,
+    "kev_catalog": 44
+   },
+   "h|o": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   }
+  },
+  "by_target_sw": {
+   "(no CPE)": {
+    "published": 34902,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "(none: runs on its own)": {
+    "published": 19647,
+    "with_cpe": 19647,
+    "kev_added": 55,
+    "kev_catalog": 303
+   },
+   "node.js": {
+    "published": 1230,
+    "with_cpe": 1230,
+    "kev_added": 5,
+    "kev_catalog": 7
+   },
+   "python": {
+    "published": 358,
+    "with_cpe": 358,
+    "kev_added": 4,
+    "kev_catalog": 4
+   },
+   "rust": {
+    "published": 261,
+    "with_cpe": 261,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "go": {
+    "published": 230,
+    "with_cpe": 230,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "wordpress": {
+    "published": 182,
+    "with_cpe": 182,
+    "kev_added": 0,
+    "kev_catalog": 3
+   },
+   "windows": {
+    "published": 140,
+    "with_cpe": 140,
+    "kev_added": 0,
+    "kev_catalog": 7
+   },
+   "joomla\\!": {
+    "published": 122,
+    "with_cpe": 122,
+    "kev_added": 5,
+    "kev_catalog": 5
+   },
+   "drupal": {
+    "published": 115,
+    "with_cpe": 115,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "perl": {
+    "published": 86,
+    "with_cpe": 86,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "linux": {
+    "published": 66,
+    "with_cpe": 66,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "ruby": {
+    "published": 64,
+    "with_cpe": 64,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "android": {
+    "published": 63,
+    "with_cpe": 63,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "jenkins": {
+    "published": 58,
+    "with_cpe": 58,
+    "kev_added": 0,
+    "kev_catalog": 2
+   },
+   "postgresql": {
+    "published": 48,
+    "with_cpe": 48,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "mongodb": {
+    "published": 44,
+    "with_cpe": 44,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "unix": {
+    "published": 37,
+    "with_cpe": 37,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "mediawiki": {
+    "published": 30,
+    "with_cpe": 30,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "kubernetes": {
+    "published": 28,
+    "with_cpe": 28,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "visual_studio_code": {
+    "published": 25,
+    "with_cpe": 25,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "macos": {
+    "published": 17,
+    "with_cpe": 17,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "iphone_os": {
+    "published": 17,
+    "with_cpe": 17,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "nginx": {
+    "published": 13,
+    "with_cpe": 13,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "docker": {
+    "published": 12,
+    "with_cpe": 12,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   ".net": {
+    "published": 12,
+    "with_cpe": 12,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "c\\#": {
+    "published": 12,
+    "with_cpe": 12,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "swift": {
+    "published": 10,
+    "with_cpe": 10,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "chrome": {
+    "published": 9,
+    "with_cpe": 9,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "mybb": {
+    "published": 8,
+    "with_cpe": 8,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "c\\+\\+": {
+    "published": 7,
+    "with_cpe": 7,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "spring_boot": {
+    "published": 6,
+    "with_cpe": 6,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "freebsd": {
+    "published": 6,
+    "with_cpe": 6,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "openshift": {
+    "published": 6,
+    "with_cpe": 6,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "openfga": {
+    "published": 6,
+    "with_cpe": 6,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "eclipse": {
+    "published": 6,
+    "with_cpe": 6,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "django": {
+    "published": 4,
+    "with_cpe": 4,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "magento": {
+    "published": 4,
+    "with_cpe": 4,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "elixir": {
+    "published": 4,
+    "with_cpe": 4,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "jetbrains": {
+    "published": 3,
+    "with_cpe": 3,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "laravel": {
+    "published": 3,
+    "with_cpe": 3,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "typo3": {
+    "published": 3,
+    "with_cpe": 3,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "claude_code": {
+    "published": 3,
+    "with_cpe": 3,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "steam": {
+    "published": 3,
+    "with_cpe": 3,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "pretix": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "fastify": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "command_centre": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "azure_cli": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "pimcore": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "microsoft_edge": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "cursor": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "theia": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "beautiful_soup": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "vmware_vsphere": {
+    "published": 2,
+    "with_cpe": 2,
+    "kev_added": 0,
+    "kev_catalog": 2
+   },
+   "asp.net": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "prestashop": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "thunderbird": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "bitlocker": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "maven": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "aws": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 2
+   },
+   "swift_services": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "saas": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "dokuwiki": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "jira": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "spip": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "lenovo_vantage": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "multiplatforms": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "mariadb": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "mysql": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "kafka": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "java": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "glpi": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "s.t.a.l.k.e.r._anomaly": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "gradle": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "proxmox_virtual_environment": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "craft_cms": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "intel_gaudi": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "plone": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "humhub": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "traefik": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "kubernates": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "home_assistant": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "linux_kernel": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "gstreamer": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "quarkus": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "php": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "azure": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "apache": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "internet_information_services": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 1,
+    "kev_catalog": 1
+   },
+   "apache_httpd": {
+    "published": 1,
+    "with_cpe": 1,
+    "kev_added": 0,
+    "kev_catalog": 0
+   },
+   "sap": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 1,
+    "kev_catalog": 2
+   },
+   "clustered_data_ontap": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "middleware": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "goldengate": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "vcenter_server": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "activematrix_bpm": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 2
+   },
+   "aws_with_multi-tenancy": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 2
+   },
+   "7-mode": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "oracle": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   },
+   "vcenter": {
+    "published": 0,
+    "with_cpe": 0,
+    "kev_added": 0,
+    "kev_catalog": 1
+   }
+  }
+ },
  "kev_by_year_added": {
   "2021": {
-   "os": 70,
-   "prodserver": 45,
-   "client": 48,
+   "os": 71,
+   "prodserver": 46,
+   "client": 50,
    "edge": 43,
-   "other": 105
+   "mgmt": 34,
+   "other": 67
   },
   "2022": {
-   "os": 142,
-   "prodserver": 44,
-   "client": 140,
+   "os": 149,
+   "prodserver": 45,
+   "client": 147,
    "edge": 99,
-   "other": 130
-  },
-  "2023": {
-   "os": 53,
-   "prodserver": 24,
-   "client": 16,
-   "edge": 32,
-   "other": 62
-  },
-  "2024": {
-   "os": 44,
-   "prodserver": 29,
-   "client": 17,
-   "edge": 35,
-   "other": 61
-  },
-  "2025": {
-   "os": 54,
-   "prodserver": 40,
-   "client": 13,
-   "edge": 52,
+   "mgmt": 29,
    "other": 86
   },
+  "2023": {
+   "os": 49,
+   "prodserver": 25,
+   "client": 24,
+   "edge": 31,
+   "mgmt": 16,
+   "other": 42
+  },
+  "2024": {
+   "os": 45,
+   "prodserver": 29,
+   "client": 17,
+   "edge": 39,
+   "mgmt": 18,
+   "other": 38
+  },
+  "2025": {
+   "os": 56,
+   "prodserver": 45,
+   "client": 18,
+   "edge": 53,
+   "mgmt": 25,
+   "other": 48
+  },
   "2026": {
-   "os": 40,
+   "os": 38,
    "prodserver": 64,
-   "client": 20,
-   "edge": 66,
-   "other": 107
+   "client": 24,
+   "edge": 65,
+   "mgmt": 41,
+   "other": 65
   }
  },
  "kev_profile": {
   "os": {
-   "entries": 403,
-   "remote_unauthenticated": 0.07444168734491315,
-   "local": 0.6898263027295285,
-   "automatable": 0.07444168734491315,
-   "ransomware": 0.18362282878411912,
-   "published_since_kev_opened": 207,
+   "entries": 408,
+   "remote_unauthenticated": 0.08333333333333333,
+   "local": 0.7009803921568627,
+   "automatable": 0.08088235294117647,
+   "ransomware": 0.2034313725490196,
+   "published_since_kev_opened": 201,
    "lag_median_days": 0,
-   "within_7_days": 0.642512077294686,
-   "within_30_days": 0.714975845410628,
-   "after_a_year": 0.057971014492753624,
-   "products": 65,
-   "top5_share": 0.7220843672456576
+   "within_7_days": 0.6268656716417911,
+   "within_30_days": 0.6965174129353234,
+   "after_a_year": 0.05970149253731343,
+   "products": 72,
+   "top5_share": 0.7009803921568627
   },
   "prodserver": {
-   "entries": 246,
-   "remote_unauthenticated": 0.6951219512195121,
-   "local": 0.04065040650406504,
-   "automatable": 0.6219512195121951,
-   "ransomware": 0.32926829268292684,
-   "published_since_kev_opened": 158,
-   "lag_median_days": 25.0,
-   "within_7_days": 0.3291139240506329,
-   "within_30_days": 0.5253164556962026,
-   "after_a_year": 0.056962025316455694,
-   "products": 120,
-   "top5_share": 0.24796747967479674
+   "entries": 254,
+   "remote_unauthenticated": 0.7007874015748031,
+   "local": 0.03937007874015748,
+   "automatable": 0.6220472440944882,
+   "ransomware": 0.3188976377952756,
+   "published_since_kev_opened": 163,
+   "lag_median_days": 22,
+   "within_7_days": 0.34355828220858897,
+   "within_30_days": 0.5398773006134969,
+   "after_a_year": 0.05521472392638037,
+   "products": 127,
+   "top5_share": 0.24015748031496062
   },
   "client": {
-   "entries": 254,
-   "remote_unauthenticated": 0.16929133858267717,
-   "local": 0.2283464566929134,
-   "automatable": 0.09055118110236221,
-   "ransomware": 0.1220472440944882,
-   "published_since_kev_opened": 65,
-   "lag_median_days": 1,
-   "within_7_days": 0.8307692307692308,
-   "within_30_days": 0.9076923076923077,
-   "after_a_year": 0.0,
-   "products": 68,
-   "top5_share": 0.5551181102362205
+   "entries": 280,
+   "remote_unauthenticated": 0.175,
+   "local": 0.21428571428571427,
+   "automatable": 0.08928571428571429,
+   "ransomware": 0.11785714285714285,
+   "published_since_kev_opened": 84,
+   "lag_median_days": 1.0,
+   "within_7_days": 0.8214285714285714,
+   "within_30_days": 0.8928571428571429,
+   "after_a_year": 0.011904761904761904,
+   "products": 74,
+   "top5_share": 0.5321428571428571
   },
   "edge": {
-   "entries": 327,
-   "remote_unauthenticated": 0.7186544342507645,
-   "local": 0.04892966360856269,
-   "automatable": 0.6055045871559633,
-   "ransomware": 0.18960244648318042,
-   "published_since_kev_opened": 179,
-   "lag_median_days": 5,
-   "within_7_days": 0.5754189944134078,
-   "within_30_days": 0.7150837988826816,
-   "after_a_year": 0.07262569832402235,
+   "entries": 330,
+   "remote_unauthenticated": 0.7212121212121212,
+   "local": 0.04242424242424243,
+   "automatable": 0.6090909090909091,
+   "ransomware": 0.19090909090909092,
+   "published_since_kev_opened": 182,
+   "lag_median_days": 5.0,
+   "within_7_days": 0.5769230769230769,
+   "within_30_days": 0.7142857142857143,
+   "after_a_year": 0.07692307692307693,
    "products": 173,
-   "top5_share": 0.1529051987767584
+   "top5_share": 0.15151515151515152
+  },
+  "mgmt": {
+   "entries": 163,
+   "remote_unauthenticated": 0.6932515337423313,
+   "local": 0.08588957055214724,
+   "automatable": 0.6319018404907976,
+   "ransomware": 0.25153374233128833,
+   "published_since_kev_opened": 105,
+   "lag_median_days": 13,
+   "within_7_days": 0.41904761904761906,
+   "within_30_days": 0.6,
+   "after_a_year": 0.08571428571428572,
+   "products": 92,
+   "top5_share": 0.18404907975460122
   },
   "other": {
-   "entries": 551,
-   "remote_unauthenticated": 0.647912885662432,
-   "local": 0.12522686025408347,
-   "automatable": 0.5825771324863884,
-   "ransomware": 0.20508166969147004,
-   "published_since_kev_opened": 291,
-   "lag_median_days": 18,
-   "within_7_days": 0.3745704467353952,
-   "within_30_days": 0.5601374570446735,
-   "after_a_year": 0.1134020618556701,
-   "products": 345,
-   "top5_share": 0.0998185117967332
+   "entries": 346,
+   "remote_unauthenticated": 0.6473988439306358,
+   "local": 0.13583815028901733,
+   "automatable": 0.5924855491329479,
+   "ransomware": 0.17341040462427745,
+   "published_since_kev_opened": 165,
+   "lag_median_days": 27,
+   "within_7_days": 0.3090909090909091,
+   "within_30_days": 0.5151515151515151,
+   "after_a_year": 0.13333333333333333,
+   "products": 228,
+   "top5_share": 0.14739884393063585
   }
  },
  "top_families": {
@@ -301,7 +1041,7 @@
     "per_1000": 6.320691949434464,
     "per_1000_lo": 3.805469449223796,
     "per_1000_hi": 9.870543436987889,
-    "share_of_type": 0.4222222222222222,
+    "share_of_type": 0.4523809523809524,
     "kev_catalog": 241,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -316,7 +1056,7 @@
     "per_1000": 15.873015873015873,
     "per_1000_lo": 7.923752333675087,
     "per_1000_hi": 28.4012099759047,
-    "share_of_type": 0.24444444444444444,
+    "share_of_type": 0.2619047619047619,
     "kev_catalog": 94,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -331,7 +1071,7 @@
     "per_1000": 9.812667261373774,
     "per_1000_lo": 4.898448142048917,
     "per_1000_hi": 17.557572268779623,
-    "share_of_type": 0.24444444444444444,
+    "share_of_type": 0.2619047619047619,
     "kev_catalog": 84,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -346,7 +1086,7 @@
     "per_1000": 2.696225284601558,
     "per_1000_lo": 1.2328858889689418,
     "per_1000_hi": 5.1182754497960365,
-    "share_of_type": 0.2,
+    "share_of_type": 0.21428571428571427,
     "kev_catalog": 33,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -361,7 +1101,7 @@
     "per_1000": 25.31645569620253,
     "per_1000_lo": 10.929848660596514,
     "per_1000_hi": 49.883510190485175,
-    "share_of_type": 0.17777777777777778,
+    "share_of_type": 0.19047619047619047,
     "kev_catalog": 47,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -376,7 +1116,7 @@
     "per_1000": 25.477707006369428,
     "per_1000_lo": 10.999465531046173,
     "per_1000_hi": 50.20123955475578,
-    "share_of_type": 0.17777777777777778,
+    "share_of_type": 0.19047619047619047,
     "kev_catalog": 38,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -391,7 +1131,7 @@
     "per_1000": 13.88888888888889,
     "per_1000_lo": 5.096977438636226,
     "per_1000_hi": 30.230263941015476,
-    "share_of_type": 0.13333333333333333,
+    "share_of_type": 0.14285714285714285,
     "kev_catalog": 17,
     "years_with_additions": 3,
     "catalog_years": 6,
@@ -406,7 +1146,7 @@
     "per_1000": 5.54016620498615,
     "per_1000_lo": 1.5095088277372901,
     "per_1000_hi": 14.185025866210108,
-    "share_of_type": 0.08888888888888889,
+    "share_of_type": 0.09523809523809523,
     "kev_catalog": 21,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -423,7 +1163,7 @@
     "per_1000": 43.47826086956522,
     "per_1000_lo": 18.770827047546188,
     "per_1000_hi": 85.6695066314854,
-    "share_of_type": 0.125,
+    "share_of_type": 0.12307692307692308,
     "kev_catalog": 20,
     "years_with_additions": 5,
     "catalog_years": 6,
@@ -438,7 +1178,7 @@
     "per_1000": 217.3913043478261,
     "per_1000_lo": 70.5863647877575,
     "per_1000_hi": 507.3187860575072,
-    "share_of_type": 0.078125,
+    "share_of_type": 0.07692307692307693,
     "kev_catalog": 18,
     "years_with_additions": 5,
     "catalog_years": 6,
@@ -453,7 +1193,7 @@
     "per_1000": 14.9812734082397,
     "per_1000_lo": 4.081892785117316,
     "per_1000_hi": 38.358010020238574,
-    "share_of_type": 0.0625,
+    "share_of_type": 0.06153846153846154,
     "kev_catalog": 6,
     "years_with_additions": 3,
     "catalog_years": 6,
@@ -468,7 +1208,7 @@
     "per_1000": 1000.0,
     "per_1000_lo": 272.46634340658085,
     "per_1000_hi": 2560.3971688509246,
-    "share_of_type": 0.0625,
+    "share_of_type": 0.06153846153846154,
     "kev_catalog": 5,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -483,7 +1223,7 @@
     "per_1000": 105.26315789473684,
     "per_1000_lo": 28.68066772700851,
     "per_1000_hi": 269.5154914579921,
-    "share_of_type": 0.0625,
+    "share_of_type": 0.06153846153846154,
     "kev_catalog": 4,
     "years_with_additions": 1,
     "catalog_years": 6,
@@ -498,7 +1238,7 @@
     "per_1000": 41.0958904109589,
     "per_1000_lo": 8.474960587610974,
     "per_1000_hi": 120.0996310923606,
-    "share_of_type": 0.046875,
+    "share_of_type": 0.046153846153846156,
     "kev_catalog": 6,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -513,7 +1253,7 @@
     "per_1000": 375.0,
     "per_1000_lo": 77.33401536195014,
     "per_1000_hi": 1095.9091337177904,
-    "share_of_type": 0.046875,
+    "share_of_type": 0.046153846153846156,
     "kev_catalog": 5,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -528,7 +1268,7 @@
     "per_1000": 500.0,
     "per_1000_lo": 103.11202048260019,
     "per_1000_hi": 1461.212178290387,
-    "share_of_type": 0.046875,
+    "share_of_type": 0.046153846153846156,
     "kev_catalog": 3,
     "years_with_additions": 1,
     "catalog_years": 6,
@@ -540,12 +1280,12 @@
   "client": [
    {
     "family": "google:chrome",
-    "published": 3968,
+    "published": 3971,
     "kev_added": 10,
-    "per_1000": 2.5201612903225805,
-    "per_1000_lo": 1.2085152964043429,
-    "per_1000_hi": 4.634666341234319,
-    "share_of_type": 0.47619047619047616,
+    "per_1000": 2.5182573659027954,
+    "per_1000_lo": 1.20760229064025,
+    "per_1000_hi": 4.631164956438624,
+    "share_of_type": 0.37037037037037035,
     "kev_catalog": 78,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -555,12 +1295,12 @@
    },
    {
     "family": "microsoft:office*",
-    "published": 605,
+    "published": 654,
     "kev_added": 7,
-    "per_1000": 11.570247933884298,
-    "per_1000_lo": 4.651839754578291,
-    "per_1000_hi": 23.83913282926013,
-    "share_of_type": 0.3333333333333333,
+    "per_1000": 10.703363914373089,
+    "per_1000_lo": 4.303307418226095,
+    "per_1000_hi": 22.053020430737583,
+    "share_of_type": 0.25925925925925924,
     "kev_catalog": 49,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -575,7 +1315,7 @@
     "per_1000": 47.61904761904762,
     "per_1000_lo": 17.47535121818135,
     "per_1000_hi": 103.64661922633877,
-    "share_of_type": 0.2857142857142857,
+    "share_of_type": 0.2222222222222222,
     "kev_catalog": 28,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -590,7 +1330,7 @@
     "per_1000": 44.11764705882353,
     "per_1000_lo": 9.098119454347074,
     "per_1000_hi": 128.93048631974006,
-    "share_of_type": 0.14285714285714285,
+    "share_of_type": 0.1111111111111111,
     "kev_catalog": 27,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -605,7 +1345,7 @@
     "per_1000": null,
     "per_1000_lo": null,
     "per_1000_hi": null,
-    "share_of_type": 0.14285714285714285,
+    "share_of_type": 0.1111111111111111,
     "kev_catalog": 9,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -620,7 +1360,7 @@
     "per_1000": null,
     "per_1000_lo": null,
     "per_1000_hi": null,
-    "share_of_type": 0.14285714285714285,
+    "share_of_type": 0.1111111111111111,
     "kev_catalog": 7,
     "years_with_additions": 3,
     "catalog_years": 6,
@@ -635,7 +1375,7 @@
     "per_1000": null,
     "per_1000_lo": null,
     "per_1000_hi": null,
-    "share_of_type": 0.09523809523809523,
+    "share_of_type": 0.07407407407407407,
     "kev_catalog": 43,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -650,7 +1390,7 @@
     "per_1000": 8.771929824561404,
     "per_1000_lo": 0.2220860349499109,
     "per_1000_hi": 48.874064832797345,
-    "share_of_type": 0.047619047619047616,
+    "share_of_type": 0.037037037037037035,
     "kev_catalog": 9,
     "years_with_additions": 5,
     "catalog_years": 6,
@@ -667,7 +1407,7 @@
     "per_1000": 642.8571428571429,
     "per_1000_lo": 293.9552212413091,
     "per_1000_hi": 1220.343103672798,
-    "share_of_type": 0.12162162162162163,
+    "share_of_type": 0.1232876712328767,
     "kev_catalog": 10,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -682,7 +1422,7 @@
     "per_1000": 352.94117647058823,
     "per_1000_lo": 129.52319138181468,
     "per_1000_hi": 768.204354265805,
-    "share_of_type": 0.08108108108108109,
+    "share_of_type": 0.0821917808219178,
     "kev_catalog": 23,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -697,7 +1437,7 @@
     "per_1000": 206.89655172413794,
     "per_1000_lo": 75.92738805140861,
     "per_1000_hi": 450.3266904316788,
-    "share_of_type": 0.08108108108108109,
+    "share_of_type": 0.0821917808219178,
     "kev_catalog": 17,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -712,7 +1452,7 @@
     "per_1000": 192.30769230769232,
     "per_1000_lo": 62.441784235323944,
     "per_1000_hi": 448.7820030508718,
-    "share_of_type": 0.06756756756756757,
+    "share_of_type": 0.0684931506849315,
     "kev_catalog": 21,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -727,7 +1467,7 @@
     "per_1000": 104.16666666666667,
     "per_1000_lo": 33.822633127467135,
     "per_1000_hi": 243.09025165255557,
-    "share_of_type": 0.06756756756756757,
+    "share_of_type": 0.0684931506849315,
     "kev_catalog": 20,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -742,7 +1482,7 @@
     "per_1000": 555.5555555555555,
     "per_1000_lo": 180.38737667982474,
     "per_1000_hi": 1296.481342146963,
-    "share_of_type": 0.06756756756756757,
+    "share_of_type": 0.0684931506849315,
     "kev_catalog": 15,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -757,7 +1497,7 @@
     "per_1000": 1000.0,
     "per_1000_lo": 324.69727802368453,
     "per_1000_hi": 2333.6664158645335,
-    "share_of_type": 0.06756756756756757,
+    "share_of_type": 0.0684931506849315,
     "kev_catalog": 6,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -772,7 +1512,7 @@
     "per_1000": 1000.0,
     "per_1000_lo": 272.46634340658085,
     "per_1000_hi": 2560.3971688509246,
-    "share_of_type": 0.05405405405405406,
+    "share_of_type": 0.0547945205479452,
     "kev_catalog": 4,
     "years_with_additions": 1,
     "catalog_years": 6,
@@ -781,52 +1521,7 @@
     "lag_median_days": 0.5
    }
   ],
-  "other": [
-   {
-    "family": "langflow:langflow",
-    "published": 211,
-    "kev_added": 5,
-    "per_1000": 23.696682464454977,
-    "per_1000_lo": 7.694248294400107,
-    "per_1000_hi": 55.30015203470458,
-    "share_of_type": 0.042735042735042736,
-    "kev_catalog": 6,
-    "years_with_additions": 2,
-    "catalog_years": 6,
-    "ransomware": 1,
-    "remote_unauthenticated": 0.6666666666666666,
-    "lag_median_days": 23.0
-   },
-   {
-    "family": "plex:media_server",
-    "published": 9,
-    "kev_added": 4,
-    "per_1000": 444.44444444444446,
-    "per_1000_lo": 121.09615262514704,
-    "per_1000_hi": 1137.9542972670777,
-    "share_of_type": 0.03418803418803419,
-    "kev_catalog": 5,
-    "years_with_additions": 2,
-    "catalog_years": 6,
-    "ransomware": 0,
-    "remote_unauthenticated": 0.2,
-    "lag_median_days": 27.0
-   },
-   {
-    "family": "litellm:litellm",
-    "published": 24,
-    "kev_added": 4,
-    "per_1000": 166.66666666666666,
-    "per_1000_lo": 45.41105723443014,
-    "per_1000_hi": 426.7328614751541,
-    "share_of_type": 0.03418803418803419,
-    "kev_catalog": 4,
-    "years_with_additions": 1,
-    "catalog_years": 6,
-    "ransomware": 0,
-    "remote_unauthenticated": 0.5,
-    "lag_median_days": 17.0
-   },
+  "mgmt": [
    {
     "family": "ivanti:endpoint_manager_mobile",
     "published": 8,
@@ -834,7 +1529,7 @@
     "per_1000": 375.0,
     "per_1000_lo": 77.33401536195014,
     "per_1000_hi": 1095.9091337177904,
-    "share_of_type": 0.02564102564102564,
+    "share_of_type": 0.07317073170731707,
     "kev_catalog": 8,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -849,7 +1544,7 @@
     "per_1000": 1000.0,
     "per_1000_lo": 206.22404096520037,
     "per_1000_hi": 2922.424356580774,
-    "share_of_type": 0.02564102564102564,
+    "share_of_type": 0.07317073170731707,
     "kev_catalog": 5,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -864,7 +1559,7 @@
     "per_1000": 500.0,
     "per_1000_lo": 103.11202048260019,
     "per_1000_hi": 1461.212178290387,
-    "share_of_type": 0.02564102564102564,
+    "share_of_type": 0.07317073170731707,
     "kev_catalog": 5,
     "years_with_additions": 3,
     "catalog_years": 6,
@@ -879,7 +1574,7 @@
     "per_1000": 3000.0,
     "per_1000_lo": 618.6721228956011,
     "per_1000_hi": 8767.273069742323,
-    "share_of_type": 0.02564102564102564,
+    "share_of_type": 0.07317073170731707,
     "kev_catalog": 4,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -894,13 +1589,180 @@
     "per_1000": 333.3333333333333,
     "per_1000_lo": 40.36821309066079,
     "per_1000_hi": 1204.1146112873264,
-    "share_of_type": 0.017094017094017096,
+    "share_of_type": 0.04878048780487805,
     "kev_catalog": 19,
     "years_with_additions": 5,
     "catalog_years": 6,
     "ransomware": 8,
     "remote_unauthenticated": 0.5789473684210527,
     "lag_median_days": 18.5
+   },
+   {
+    "family": "vmware:vcenter_server",
+    "published": 2,
+    "kev_added": 2,
+    "per_1000": 1000.0,
+    "per_1000_lo": 121.10463927198236,
+    "per_1000_hi": 3612.3438338619794,
+    "share_of_type": 0.04878048780487805,
+    "kev_catalog": 12,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 4,
+    "remote_unauthenticated": 0.9166666666666666,
+    "lag_median_days": 76.5
+   },
+   {
+    "family": "beyondtrust:remote_support",
+    "published": 6,
+    "kev_added": 2,
+    "per_1000": 333.3333333333333,
+    "per_1000_lo": 40.36821309066079,
+    "per_1000_hi": 1204.1146112873264,
+    "share_of_type": 0.04878048780487805,
+    "kev_catalog": 4,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.75,
+    "lag_median_days": 4.5
+   },
+   {
+    "family": "connectwise:screenconnect",
+    "published": 4,
+    "kev_added": 2,
+    "per_1000": 500.0,
+    "per_1000_lo": 60.55231963599118,
+    "per_1000_hi": 1806.1719169309897,
+    "share_of_type": 0.04878048780487805,
+    "kev_catalog": 4,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 0.25,
+    "lag_median_days": 20.5
+   }
+  ],
+  "other": [
+   {
+    "family": "langflow:langflow",
+    "published": 211,
+    "kev_added": 5,
+    "per_1000": 23.696682464454977,
+    "per_1000_lo": 7.694248294400107,
+    "per_1000_hi": 55.30015203470458,
+    "share_of_type": 0.0684931506849315,
+    "kev_catalog": 6,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.6666666666666666,
+    "lag_median_days": 23.0
+   },
+   {
+    "family": "plex:media_server",
+    "published": 9,
+    "kev_added": 4,
+    "per_1000": 444.44444444444446,
+    "per_1000_lo": 121.09615262514704,
+    "per_1000_hi": 1137.9542972670777,
+    "share_of_type": 0.0547945205479452,
+    "kev_catalog": 5,
+    "years_with_additions": 2,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.2,
+    "lag_median_days": 27.0
+   },
+   {
+    "family": "litellm:litellm",
+    "published": 24,
+    "kev_added": 4,
+    "per_1000": 166.66666666666666,
+    "per_1000_lo": 45.41105723443014,
+    "per_1000_hi": 426.7328614751541,
+    "share_of_type": 0.0547945205479452,
+    "kev_catalog": 4,
+    "years_with_additions": 1,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 17.0
+   },
+   {
+    "family": "php:php",
+    "published": 30,
+    "kev_added": 2,
+    "per_1000": 66.66666666666667,
+    "per_1000_lo": 8.073642618132158,
+    "per_1000_hi": 240.8229222574653,
+    "share_of_type": 0.0273972602739726,
+    "kev_catalog": 5,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 2,
+    "remote_unauthenticated": 1.0,
+    "lag_median_days": 5
+   },
+   {
+    "family": "scadabr:scadabr",
+    "published": 7,
+    "kev_added": 2,
+    "per_1000": 285.7142857142857,
+    "per_1000_lo": 34.60132550628067,
+    "per_1000_hi": 1032.0982382462798,
+    "share_of_type": 0.0273972602739726,
+    "kev_catalog": 2,
+    "years_with_additions": 1,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.0,
+    "lag_median_days": null
+   },
+   {
+    "family": "adobe:coldfusion",
+    "published": 106,
+    "kev_added": 1,
+    "per_1000": 9.433962264150944,
+    "per_1000_lo": 0.23884724513480984,
+    "per_1000_hi": 52.56267349942355,
+    "share_of_type": 0.0136986301369863,
+    "kev_catalog": 17,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 4,
+    "remote_unauthenticated": 0.9411764705882353,
+    "lag_median_days": 79.5
+   },
+   {
+    "family": "oracle:weblogic_server",
+    "published": 58,
+    "kev_added": 1,
+    "per_1000": 17.24137931034483,
+    "per_1000_lo": 0.436513930763618,
+    "per_1000_hi": 96.0628170851534,
+    "share_of_type": 0.0136986301369863,
+    "kev_catalog": 16,
+    "years_with_additions": 6,
+    "catalog_years": 6,
+    "ransomware": 3,
+    "remote_unauthenticated": 0.875,
+    "lag_median_days": 103
+   },
+   {
+    "family": "qualcomm:qca6391_firmware",
+    "published": 80,
+    "kev_added": 1,
+    "per_1000": 12.5,
+    "per_1000_lo": 0.316472599803623,
+    "per_1000_hi": 69.64554238673621,
+    "share_of_type": 0.0136986301369863,
+    "kev_catalog": 12,
+    "years_with_additions": 5,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 0.0,
+    "lag_median_days": 0
    }
   ]
  }

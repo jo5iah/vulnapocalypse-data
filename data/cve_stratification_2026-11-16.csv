@@ -1,6 +1,6 @@
 vendor,exposure,published,kev_added_in_window,published_in_window_and_in_kev
 microsoft,"remote, no privileges, no user action",775,10,8
-microsoft,"remote, other",1679,16,8
+microsoft,"remote, other",1682,16,8
 microsoft,local or physical,3211,16,13
 microsoft,unscored,0,0,0
 cisco,"remote, no privileges, no user action",200,16,16
@@ -79,11 +79,11 @@ jfrog,"remote, no privileges, no user action",6,2,2
 jfrog,"remote, other",38,2,2
 jfrog,local or physical,1,0,0
 jfrog,unscored,0,0,0
-(other vendors),"remote, no privileges, no user action",26065,95,73
-(other vendors),"remote, other",35298,37,23
-(other vendors),local or physical,9589,8,5
-(other vendors),unscored,132,0,0
-(no vendor recorded),"remote, no privileges, no user action",2588,0,0
-(no vendor recorded),"remote, other",2250,0,0
+(other vendors),"remote, no privileges, no user action",26126,95,73
+(other vendors),"remote, other",35362,37,23
+(other vendors),local or physical,9609,8,5
+(other vendors),unscored,96,0,0
+(no vendor recorded),"remote, no privileges, no user action",2591,0,0
+(no vendor recorded),"remote, other",2251,0,0
 (no vendor recorded),local or physical,436,0,0
-(no vendor recorded),unscored,2986,0,0
+(no vendor recorded),unscored,2984,0,0

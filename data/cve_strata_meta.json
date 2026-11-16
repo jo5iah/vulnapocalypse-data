@@ -1,7 +1,7 @@
 {
  "floor": "2025-11-16",
- "last_sync": "2026-11-16T18:00:32",
+ "last_sync": "2026-11-16T22:44:43",
  "source": "https://services.nvd.nist.gov/rest/json/cves/2.0",
- "rows": 109277,
+ "rows": 109391,
  "rows_kev": 1781
 }

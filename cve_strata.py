@@ -35,11 +35,15 @@ Three things to know when reading any rate from this table:
     (REPACKAGERS) whenever another vendor is present. `families` keeps every vendor:product.
   * Exposure is read from the CVSS vector, preferring NVD's own (Primary) score within the
     newest CVSS version present. Unscored records form their own class rather than being dropped.
-  * Product type (`ptype`) is one of os, prodserver, client, edge, other: PTYPE_RULES applied to
-    the CPE families of the CVE's own vendor, the commonest type winning. Without CPE it comes
-    from the vendor alone when that vendor ships one type (VENDOR_PTYPE), else it is empty;
-    `ptype_source` records which. It is derived from the other columns and rewritten whenever
-    the table is, so `retype` is all a rule change needs.
+  * Product type (`ptype`) is one of os, prodserver, client, edge, mgmt, other: PTYPE_RULES
+    applied to the CVE's CPE families, one vote per vendor, with distributions and vendors that
+    only embed the code set aside (see ptype()). Without CPE it comes from the vendor alone when
+    that vendor ships one type (VENDOR_PTYPE), else it is empty; `ptype_source` records which.
+    It is derived from the other columns and rewritten whenever the table is, so `retype` is
+    all a rule change needs. `channel`, who assigned the CVE, is derived the same way.
+  * `cpe_part` (a application, o operating system or firmware, h hardware) and `target_sw` (the
+    platform a product runs on: wordpress, node.js, python ...) are NVD's own CPE fields for the
+    vulnerable products. They are recorded, not inferred, and exist only where CPE does.
 """
 
 import argparse
@@ -69,7 +73,7 @@ _last = [0.0]
 FIELDS = ["cve", "published", "last_modified", "status", "source", "vendor", "vendor_source",
           "families", "cvss_version", "cvss_type", "base_score", "severity", "av", "pr", "ui",
           "exposure", "cwes", "ssvc_exploitation", "ssvc_automatable", "ssvc_impact", "kev_added",
-          "ptype", "ptype_source"]
+          "cpe_part", "target_sw", "channel", "ptype", "ptype_source"]
 
 REPACKAGERS = {"debian", "fedoraproject", "redhat", "canonical", "opensuse", "suse", "netapp",
                "gentoo", "almalinux", "rockylinux", "amazon"}
@@ -87,33 +91,42 @@ EXPOSURES = ["remote, no privileges, no user action", "remote, other", "local or
 #               management, file transfer, ERP/CRM, source control and CI, help desk, telephony
 #   client      software a person runs: browsers, office suites, readers, media, messaging, IDEs
 #   edge        network-perimeter devices: firewalls, VPN and remote-access gateways, load
-#               balancers, routers and switches, enterprise and consumer
-#   other       everything else: middleware, databases, management and backup servers, AI and
-#               workflow servers, libraries, chipsets, IoT, NAS and industrial control
+#               balancers, routers and switches, enterprise and consumer, with the consoles
+#               their vendors sell to manage them
+#   mgmt        software that administers other systems: remote management and support, endpoint
+#               and mobile device management, virtualization management, backup, monitoring,
+#               endpoint security, identity and privileged access, hosting control panels
+#   other       everything else: middleware, databases, AI and workflow servers, libraries,
+#               chipsets, IoT, NAS and industrial control
 # Rules are tried in order against `vendor:product`; the first match wins, no match is `other`.
 # Exceptions therefore sit above the rule they carve out of (Cisco's non-network products
 # above the Cisco catch-all in `edge`).
-PTYPES = ["os", "prodserver", "client", "edge", "other"]
+PTYPES = ["os", "prodserver", "client", "edge", "mgmt", "other"]
 PTYPE_NAME = {"os": "operating system", "prodserver": "productivity server",
-              "client": "client / user app", "edge": "edge device", "other": "other"}
+              "client": "client / user app", "edge": "edge device",
+              "mgmt": "infrastructure management", "other": "other"}
 PTYPE_RULES = [(t, re.compile(rx)) for t, rx in [
-    ("other", r"^cisco:(identity_services|hyperflex|data_center_network|prime|ip_phone"
-              r"|smart_licensing|broadworks|anyconnect|secure_client|webex|evolved|dna"
-              r"|digital_network|nexus_dashboard|crosswork|unified_contact|unified_intelligence"
-              r"|ucs|integrated_management|application_policy|secure_access_control"
-              r"|packaged_contact|finesse|emergency|virtualized|telepresence|jabber|duo"
-              r"|thousandeyes|appdynamics|enterprise_nfv|network_services_orch|common_services"
-              r"|intersight|cyber_vision|industrial)"),
+    ("edge", r"^ivanti:(cloud_services_appliance|endpoint_manager_cloud_services)"),
+    ("mgmt", r"^(cisco:(identity_services|data_center_network|prime|smart_licensing|dna"
+             r"|digital_network|nexus_dashboard|crosswork|ucs|integrated_management"
+             r"|application_policy|secure_access_control|intersight|hyperflex|duo"
+             r"|common_services|network_services_orch|enterprise_nfv|evolved|thousandeyes"
+             r"|appdynamics|cyber_vision)"
+             r"|fortinet:forti(client|sandbox|siem|analyzer|soar|edr|portal|authenticator"
+             r"|deceptor|ndr)|paloaltonetworks:(expedition|cortex|traps)"
+             r"|checkpoint:(endpoint|zonealarm|harmony)"
+             r"|sonicwall:(global_management|analytics)|juniper:(junos_space|contrail|paragon)"
+             r"|ivanti:(endpoint_manager|avalanche|neurons_for_itsm|workspace_control|velocity"
+             r"|patch|desktop|xtraction|application_control|automation))"),
+    ("other", r"^(cisco:(ip_phone|broadworks|anyconnect|secure_client|webex|unified_contact"
+              r"|unified_intelligence|packaged_contact|finesse|emergency|virtualized"
+              r"|telepresence|jabber|industrial)"
+              r"|fortinet:forti(recorder|camera|token|tester)"
+              r"|sonicwall:(email_security|netextender)|ivanti:secure_access_client"
+              r"|f5:nginx)"),
     ("prodserver", r"^cisco:(unified_communications|unity_connection|unified_presence"
                    r"|webex_meetings_server|expressway)"),
     ("prodserver", r"^accellion:(fta|kiteworks)"),
-    ("other", r"^(fortinet:forti(client|sandbox|siem|analyzer|soar|edr|portal|recorder|camera"
-              r"|authenticator|token|deceptor|ndr|tester)"
-              r"|paloaltonetworks:(expedition|cortex|traps)|checkpoint:(endpoint|zonealarm|harmony)"
-              r"|sonicwall:(email_security|global_management|analytics|netextender)"
-              r"|ivanti:(endpoint_manager|avalanche|neurons_for_itsm|workspace_control|velocity"
-              r"|patch|secure_access_client|desktop|xtraction|application_control|automation)"
-              r"|f5:nginx|juniper:(junos_space|contrail|paragon))"),
     ("edge", r"^(fortinet:|paloaltonetworks:|sonicwall:|pulsesecure:|zyxel:|arista:|mikrotik:"
              r"|draytek:|arraynetworks:|versa-networks:|netgear:|dlink:|tp-link:|tenda:"
              r"|totolink:|linksys:|ubiquiti:|ui:|trendnet:|edimax:|wavlink:|ruckuswireless:"
@@ -136,7 +149,9 @@ PTYPE_RULES = [(t, re.compile(rx)) for t, rx in [
            r"|android:|samsung:(android|mobile)|debian:|canonical:|redhat:enterprise_linux"
            r"|fedoraproject:|suse:linux|opensuse:|oracle:(linux|solaris)|freebsd:"
            r"|openbsd:openbsd|netbsd:|ibm:(aix|vios|i$|z\/os)|huawei:(harmonyos|emui)"
-           r"|vmware:(esxi|workstation|fusion)|xen:|qemu:)"),
+           r"|vmware:(esxi|workstation|fusion)|xen:|qemu:|igel:igel_os"
+           r"|sudo_project:|polkit_project:|gnu:(glibc|bash)|libuser_project:"
+           r"|systemd_project:|linux-pam:|kernel:(util-linux|linux-pam))"),
     ("prodserver", r"^(microsoft:(sharepoint|exchange|office_online_server|office_web_apps"
                    r"|project_server|skype_for_business_server|lync_server|dynamics|biztalk)"
                    r"|synacor:|zimbra:|atlassian:|roundcube:|smartertools:|icewarp:|mdaemon:"
@@ -147,7 +162,7 @@ PTYPE_RULES = [(t, re.compile(rx)) for t, rx in [
                    r"|oracle:(e-business|peoplesoft|siebel|jd_edwards|hyperion|webcenter|agile"
                    r"|business_intelligence|bi_publisher)|3ds:|dassault"
                    r"|progress:(moveit|ws_ftp|sitefinity|telerik)|crushftp:|cleo:|fortra:"
-                   r"|kiteworks:|solarwinds:(serv-u|web_help_desk)|wftpserver:|rejetto:"
+                   r"|kiteworks:|gladinet:|solarwinds:(serv-u|web_help_desk)|wftpserver:|rejetto:"
                    r"|citrix:(sharefile|xenapp|virtual_apps|workspace|storefront|xenmobile)"
                    r"|vmware:(horizon|workspace_one)|wordpress:wordpress|drupal:|joomla:"
                    r"|craftcms:|sitecore:|kentico:|dotnetnuke|dnnsoftware:|dotcms:|octobercms:"
@@ -176,8 +191,37 @@ PTYPE_RULES = [(t, re.compile(rx)) for t, rx in [
                r"|jetbrains:(intellij|pycharm|rider|webstorm|phpstorm|goland|clion)"
                r"|teamviewer:|anydesk:|freerdp:|openclaw:|b3log:siyuan|telemessage:"
                r"|disc-soft:)"),
+    ("mgmt", r"^(ivanti:|mobileiron:|zohocorp:|connectwise:|n-able:|simple-help:|kaseya:"
+             r"|beyondtrust:|solarwinds:|veeam:|veritas:|commvault:|acronis:|arcserve:|ahsay:"
+             r"|nakivo:|nagios:|zabbix:|paessler:|progress:whatsup|trendmicro:|mcafee:"
+             r"|trellix:|symantec:|sophos:|kaspersky:|eset:|bitdefender:|crowdstrike:"
+             r"|sentinelone:|tanium:|quest:|netwrix:|saltstack:|puppet:|papercut:"
+             r"|devolutions:|cyberark:|forgerock:|wazuh:|checkmk:|tenable:|rapid7:"
+             r"|eyesofnetwork:|rconfig:|absolute:|fleetdm:|hashicorp:|librenms:|cacti:"
+             r"|gfi:|motex:|skygroup:|teamt5:|sciencelogic:|control-webpanel:|cyberpanel:"
+             r"|webmin:|cpanel:|litespeedtech:|plesk:"
+             r"|vmware:(vcenter|cloud_foundation|aria|vrealize|vsphere|identity_manager"
+             r"|one_access|nsx|tools|telco_cloud|carbon_black|site_recovery)"
+             r"|broadcom:vmware_(vcenter|aria|nsx|cloud)"
+             r"|microsoft:(defender|malware_protection|configuration_manager|system_center"
+             r"|open_management|azure_automation|endpoint_protection|security_essentials"
+             r"|intune|windows_admin_center)"
+             r"|hp:(openview|system_management|systems_insight|insight|procurve_manager"
+             r"|oneview|version_control|matrix_operating)"
+             r"|hpe:(oneview|intelligent_management|systems_insight)"
+             r"|dell:(openmanage|idrac|emc_networker|networker|avamar|recoverpoint"
+             r"|powerprotect|wyse_management|secure_connect)"
+             r"|ibm:(tivoli|bigfix|spectrum_protect|qradar)|hcltech:bigfix"
+             r"|microfocus:(operations|access_manager|netiq)|redhat:(ansible|satellite))"),
 ]]
-PTYPE_TIE = ["edge", "prodserver", "client", "os", "other"]     # equal votes: most specific first
+PTYPE_TIE = ["edge", "prodserver", "client", "os", "mgmt", "other"]   # equal votes: this order
+# A CVE in shared code lists everyone who ships it. Distributions repackage it, suites bundle
+# it, and devices and management products embed it; none of them is what the flaw is in.
+DISTRO_FAMILY = re.compile(r"^(debian:|fedoraproject:|canonical:|opensuse:|suse:|gentoo:"
+                           r"|almalinux:|rockylinux:|centos:|netapp:|redhat:enterprise_linux"
+                           r"|novell:(suse|opensuse)|oracle:(linux|solaris)|amazon:linux)")
+BUNDLE_FAMILY = re.compile(r"^vmware:(cloud_foundation|telco_cloud)")
+EMBEDDERS = ["other", "edge", "mgmt"]         # dropped in this order while another type remains
 # Assigner-named vendors (no CPE yet) that ship one product type. Spelled as norm_vendor() leaves
 # them. Vendors that ship several types stay untyped; `report` spreads them over the types in
 # proportion to that vendor's typed CVEs.
@@ -191,7 +235,22 @@ VENDOR_PTYPE = {
     **{v: "prodserver" for v in ("drupal gitea craftcms sap_se openemr typo3 wikimedia tryghost "
                                  "frappe mattermost discourse gitlab atlassian getgrav jenkins "
                                  "yeswiki").split()},
+    **{v: "mgmt" for v in ("zohocorp tanium trend_micro veeam acronis connectwise n_able "
+                           "beyondtrust commvault nagios zabbix").split()},
 }
+# Who assigned the CVE, from NVD's sourceIdentifier. Recorded for every record, CPE or not.
+CHANNELS = ["GitHub advisory", "WordPress CNA", "VulDB", "VulnCheck", "MITRE",
+            "CISA or national CERT", "research or bounty CNA", "vendor or project CNA"]
+CHANNEL_RULES = [(c, re.compile(rx)) for c, rx in [
+    ("GitHub advisory", r"^security-advisories@github\.com$"),
+    ("WordPress CNA", r"@(patchstack|wordfence|wpscan)\.com$"),
+    ("VulDB", r"@vuldb\.com$"), ("VulnCheck", r"@vulncheck\.com$"),
+    ("MITRE", r"^cve@mitre\.org$"),
+    ("CISA or national CERT", r"(cert|csirt|ncsc|cisa|dhs\.gov|usom\.gov|incibe|tech\.gov\.sg"
+                              r"|cyber\.gov|govcert|\.gov\.)"),
+    ("research or bounty CNA", r"(zdi-disclosures@|huntr|snyk\.io|hackerone\.com|talos-cna@"
+                               r"|fluidattacks|vuln@|research@|@checkmarx|@jfrog\.com$)"),
+]]
 # Releases NVD files under separate products but that are one thing to an attacker; used only
 # for the per-family table of the report.
 FAMILY_GROUPS = [(re.compile(rx), name) for rx, name in [
@@ -266,15 +325,19 @@ def norm_vendor(name):
 
 
 def cpe_vendors(cve):
-    counts, fams = Counter(), set()
+    """Vendors, product families, CPE parts and target software of the vulnerable products."""
+    counts, fams, kinds, sw = Counter(), set(), set(), set()
     for cfg in cve.get("configurations", []):
         for node in cfg.get("nodes", []):
             for match in node.get("cpeMatch", []):
-                parts = match.get("criteria", "").split(":")
+                parts = re.split(r"(?<!\\):", match.get("criteria", ""))   # '\:' is a literal colon
                 if match.get("vulnerable") and len(parts) > 4:
                     counts[parts[3]] += 1
                     fams.add(family(parts[3], parts[4]))
-    return counts, fams
+                    kinds.add(parts[2])
+                    if len(parts) > 10 and parts[10] not in ("*", "-"):
+                        sw.add(parts[10])
+    return counts, fams, kinds, sw
 
 
 def pick_vendor(counts):
@@ -329,23 +392,46 @@ def family_ptype(fam):
 
 
 def ptype(vendor, families):
-    """(type, source) for one CVE. The CVE's own vendor's families vote; a distribution or an
-    appliance that merely ships the code is only counted when the vendor has no family listed."""
+    """(type, source) for one CVE.
+
+    Each vendor listed gets one vote, for the commonest type among its families, so a device
+    maker listing thirty models counts once. Distributions and suites are left out while anything
+    else is listed. When several vendors remain the flaw is in shared code, and the vendors
+    that embed it (EMBEDDERS) are dropped while another type remains: a kernel flaw that F5 also
+    ships is an operating-system flaw, and a Chrome flaw that Couchbase also ships is a client one.
+    """
     fams = families.split("|") if families else []
-    if fams:
-        own = [f for f in fams if f.startswith(vendor + ":")] or fams
-        votes = Counter(family_ptype(f) for f in own)
-        return max(votes, key=lambda t: (votes[t], -PTYPE_TIE.index(t))), "cpe"
-    return (VENDOR_PTYPE[vendor], "vendor") if vendor in VENDOR_PTYPE else ("", "")
+    if not fams:
+        return (VENDOR_PTYPE[vendor], "vendor") if vendor in VENDOR_PTYPE else ("", "")
+    own = [f for f in fams if not DISTRO_FAMILY.search(f)] or fams
+    by_vendor = defaultdict(list)
+    for f in own:
+        by_vendor[f.split(":")[0]].append(f)
+    votes = Counter()
+    for fs in by_vendor.values():
+        fs = [f for f in fs if not BUNDLE_FAMILY.search(f)] or fs
+        c = Counter(family_ptype(f) for f in fs)
+        votes[max(c, key=lambda t: (c[t], -PTYPE_TIE.index(t)))] += 1
+    if len(by_vendor) > 1:
+        for t in EMBEDDERS:
+            if len(votes) > 1:
+                votes.pop(t, None)
+    return max(votes, key=lambda t: (votes[t], -PTYPE_TIE.index(t))), "cpe"
+
+
+def channel(source):
+    return next((c for c, rx in CHANNEL_RULES if rx.search(source or "")), CHANNELS[-1])
 
 
 def set_ptype(r):
+    """The derived columns: product type and assignment channel."""
     r["ptype"], r["ptype_source"] = ptype(r["vendor"], r["families"])
+    r["channel"] = channel(r.get("source", ""))
     return r
 
 
 def row(cve):
-    counts, fams = cpe_vendors(cve)
+    counts, fams, kinds, sw = cpe_vendors(cve)
     vendor, vsrc = pick_vendor(counts), "cpe"
     if not vendor:
         seen = Counter(norm_vendor(a.get("vendor") or "") for blk in cve.get("affected", [])
@@ -360,7 +446,8 @@ def row(cve):
             "source": cve.get("sourceIdentifier", ""), "vendor": vendor, "vendor_source": vsrc,
             "families": "|".join(sorted(fams)), **c,
             "exposure": exposure(c["av"], c["pr"], c["ui"]), "cwes": "|".join(cwes), **ssvc(cve),
-            "kev_added": cve.get("cisaExploitAdd", "")})
+            "kev_added": cve.get("cisaExploitAdd", ""),
+            "cpe_part": "|".join(sorted(kinds)), "target_sw": "|".join(sorted(sw))})
 
 
 def read_table():
@@ -514,8 +601,11 @@ def ptype_tables(rows, pub, kev, start, as_of, per_type=8, min_mix=20):
             mix[r["vendor"]][r["ptype"]] += 1
     imputed = {t: float(typed[t] + by_vendor[t]) for t in PTYPES}
     spread = to_other = nameless = 0
+    rest = []                                # every publication counted as `other`, whole
     for r in pub:
         if r["ptype"]:
+            if r["ptype"] == "other":
+                rest.append(r)
             continue
         m = mix.get(r["vendor"]) if r["vendor"] else None
         if not r["vendor"]:
@@ -527,6 +617,7 @@ def ptype_tables(rows, pub, kev, start, as_of, per_type=8, min_mix=20):
         else:
             to_other += 1
             imputed["other"] += 1
+            rest.append(r)
     base = sum(imputed.values())
     for t in PTYPES:
         imputed[t] += nameless * imputed[t] / base
@@ -547,6 +638,34 @@ def ptype_tables(rows, pub, kev, start, as_of, per_type=8, min_mix=20):
         for r in rs:
             if r["ptype_source"] == "cpe":
                 cross[r["ptype"]][r["exposure"]][i] += 1
+
+    # what `other` is made of, along fields NVD records: who assigned the CVE, whether NVD has
+    # analyzed it (only then does it have CPE and can it be matched to KEV at all), and for the
+    # analyzed ones the CPE part and the platform the product runs on
+    kev_other = [r for r in kev if r["ptype"] == "other"]
+    cat_other = [r for r in rows if r["ptype"] == "other" and r["kev_added"]
+                 and r["kev_added"] <= str(as_of)]
+
+    def split(key, many=False):
+        out = defaultdict(lambda: {"published": 0, "with_cpe": 0, "kev_added": 0,
+                                   "kev_catalog": 0})
+        for rs, field in ((rest, "published"), (kev_other, "kev_added"),
+                          (cat_other, "kev_catalog")):
+            for r in rs:
+                for k in (key(r) if many else [key(r)]):
+                    out[k][field] += 1
+                    if field == "published" and r["ptype_source"] == "cpe":
+                        out[k]["with_cpe"] += 1
+        return dict(sorted(out.items(), key=lambda kv: -kv[1]["published"]))
+    analyzed = lambda r: r["ptype_source"] == "cpe"
+    inside = {
+        "published": len(rest), "with_cpe": sum(1 for r in rest if analyzed(r)),
+        "by_channel": split(lambda r: r["channel"]),
+        "by_cpe_part": split(lambda r: (r.get("cpe_part") or "(none recorded)")
+                             if analyzed(r) else "(no CPE)"),
+        "by_target_sw": split(lambda r: (r["target_sw"].split("|") if r.get("target_sw")
+                                         else ["(none: runs on its own)"])
+                              if analyzed(r) else ["(no CPE)"], many=True)}
 
     # the whole catalog, whatever the window: composition by year added, and a profile per type
     catalog, snap = kev_catalog(as_of)
@@ -628,7 +747,8 @@ def ptype_tables(rows, pub, kev, start, as_of, per_type=8, min_mix=20):
             "coverage": {"cpe": sum(typed.values()) / N, "vendor": sum(by_vendor.values()) / N,
                          "spread_by_vendor_mix": spread / N, "long_tail_to_other": to_other / N,
                          "no_vendor": nameless / N},
-            "types": types, "type_by_exposure": cross, "kev_by_year_added": by_year,
+            "types": types, "type_by_exposure": cross, "inside_other": inside,
+            "kev_by_year_added": by_year,
             "kev_profile": profile, "top_families": top}
 
 
@@ -673,6 +793,33 @@ def ptype_section(P):
             p, k = P["type_by_exposure"][t][e]
             cells.append(f"{k}/{p:,} = {1000 * k / p:.1f}" if p else (f"{k}/0" if k else "—"))
         L.append(f"| {T[t]['name']} | " + " | ".join(cells) + " |")
+
+    I = P["inside_other"]
+    PART = {"a": "application", "o": "operating system or firmware", "h": "hardware",
+            "a|o": "application and OS/firmware", "h|o": "hardware and its firmware",
+            "a|h": "application and hardware", "a|h|o": "all three"}
+    head = ["| published | with CPE | KEV additions | KEV, whole catalog |", "---:|---:|---:|---:|"]
+    line = lambda name, c: (f"| {name} | {c['published']:,} | {c['with_cpe']:,} | "
+                            f"{c['kev_added']} | {c['kev_catalog']} |")
+    L += ["", "### Inside *other*", "",
+          f"*Other* is a remainder, so it is split here only along fields NVD records. Of its "
+          f"{I['published']:,} publications, {I['with_cpe']:,} have CPE. The rest are unanalyzed "
+          "(most are marked Deferred), and since every KEV entry has CPE they cannot be matched "
+          "to the catalog: their zero is a limit of the measurement, not a rate. Counts here "
+          "are whole records, without the proportional shares the table above spreads from "
+          "multi-type vendors.", "",
+          "**By who assigned the CVE** (`channel`, from NVD's `sourceIdentifier`)", "",
+          "| channel " + head[0], "|---|" + head[1]]
+    L += [line(k, c) for k, c in I["by_channel"].items()]
+    L += ["", "**By CPE part of the vulnerable products** (`cpe_part`)", "",
+          "| part " + head[0], "|---|" + head[1]]
+    L += [line(PART.get(k, k), c) for k, c in I["by_cpe_part"].items()]
+    sw = list(I["by_target_sw"].items())
+    L += ["", "**By the platform the product runs on** (`target_sw`): the 12 largest. A value "
+          "here marks a plugin, package or extension; none marks a product that stands alone. "
+          "A CVE listing several platforms counts under each.", "",
+          "| target software " + head[0], "|---|" + head[1]]
+    L += [line(f"`{k}`" if not k.startswith("(") else k, c) for k, c in sw[:12]]
 
     Y = P["kev_by_year_added"]
     L += ["", "### Share of KEV additions by year added, whole catalog", "",
