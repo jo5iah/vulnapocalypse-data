@@ -145,9 +145,9 @@ CISA's own assessment at the time it enriched the record: `none`, `poc` (a publi
 | operating system | 9,010 | 17,606 | 16.3% | 42 | 13.1% | 2.4 | 1.7–3.2 | 4.7 | 0.8× |
 | productivity server | 4,274 | 7,000 | 6.5% | 65 | 20.2% | 9.3 | 7.2–11.8 | 15.2 | 3.1× |
 | client / user app | 7,297 | 9,204 | 8.5% | 27 | 8.4% | 2.9 | 1.9–4.3 | 3.7 | 1.0× |
-| edge device | 1,687 | 3,654 | 3.4% | 73 | 22.7% | 20.0 | 15.7–25.1 | 43.3 | 6.7× |
-| infrastructure management | 1,096 | 1,736 | 1.6% | 41 | 12.8% | 23.6 | 16.9–32.0 | 37.4 | 7.9× |
-| other | 22,850 | 68,634 | 63.6% | 73 | 22.7% | 1.1 | 0.8–1.3 | 3.2 | 0.4× |
+| edge device | 1,570 | 3,482 | 3.2% | 55 | 17.1% | 15.8 | 11.9–20.6 | 35.0 | 5.3× |
+| infrastructure management | 1,266 | 1,965 | 1.8% | 59 | 18.4% | 30.0 | 22.9–38.7 | 46.6 | 10.1× |
+| other | 22,797 | 68,577 | 63.6% | 73 | 22.7% | 1.1 | 0.8–1.3 | 3.2 | 0.4× |
 | **all** | 46,214 | 107,834 | 100% | 321 | 100% | 3.0 | | | 1.0× |
 
 ### Product type × exposure: KEV additions / published, per 1,000
@@ -159,19 +159,19 @@ CPE-typed records only, on both sides, so these rates are upper bounds.
 | operating system | 5/1,396 = 3.6 | 10/978 = 10.2 | 27/6,636 = 4.1 | — |
 | productivity server | 46/1,008 = 45.6 | 19/2,997 = 6.3 | 0/269 = 0.0 | — |
 | client / user app | 2/789 = 2.5 | 18/5,042 = 3.6 | 7/1,466 = 4.8 | — |
-| edge device | 54/647 = 83.5 | 13/932 = 13.9 | 6/108 = 55.6 | — |
-| infrastructure management | 29/285 = 101.8 | 8/623 = 12.8 | 4/188 = 21.3 | — |
-| other | 49/9,121 = 5.4 | 19/10,211 = 1.9 | 5/3,517 = 1.4 | 0/1 = 0.0 |
+| edge device | 43/602 = 71.4 | 10/868 = 11.5 | 2/100 = 20.0 | — |
+| infrastructure management | 40/343 = 116.6 | 11/719 = 15.3 | 8/204 = 39.2 | — |
+| other | 49/9,108 = 5.4 | 19/10,179 = 1.9 | 5/3,509 = 1.4 | 0/1 = 0.0 |
 
 ### Inside *other*
 
-*Other* is a remainder, so it is split here only along fields NVD records. Of its 57,752 publications, 22,850 have CPE. The rest are unanalyzed (most are marked Deferred), and since every KEV entry has CPE they cannot be matched to the catalog: their zero is a limit of the measurement, not a rate. Counts here are whole records, without the proportional shares the table above spreads from multi-type vendors.
+*Other* is a remainder, so it is split here only along fields NVD records. Of its 57,699 publications, 22,797 have CPE. The rest are unanalyzed (most are marked Deferred), and since every KEV entry has CPE they cannot be matched to the catalog: their zero is a limit of the measurement, not a rate. Counts here are whole records, without the proportional shares the table above spreads from multi-type vendors.
 
 **By who assigned the CVE** (`channel`, from NVD's `sourceIdentifier`)
 
 | channel | published | with CPE | KEV additions | KEV, whole catalog |
 |---|---:|---:|---:|---:|
-| vendor or project CNA | 15,225 | 9,987 | 32 | 196 |
+| vendor or project CNA | 15,172 | 9,934 | 32 | 196 |
 | GitHub advisory | 12,107 | 6,153 | 19 | 31 |
 | WordPress CNA | 10,934 | 152 | 0 | 0 |
 | VulnCheck | 8,677 | 2,129 | 2 | 6 |
@@ -185,7 +185,7 @@ CPE-typed records only, on both sides, so these rates are upper bounds.
 | part | published | with CPE | KEV additions | KEV, whole catalog |
 |---|---:|---:|---:|---:|
 | (no CPE) | 34,902 | 0 | 0 | 0 |
-| application | 20,803 | 20,803 | 62 | 250 |
+| application | 20,750 | 20,750 | 62 | 250 |
 | operating system or firmware | 1,771 | 1,771 | 4 | 52 |
 | application and OS/firmware | 275 | 275 | 7 | 44 |
 | hardware and its firmware | 1 | 1 | 0 | 0 |
@@ -195,7 +195,7 @@ CPE-typed records only, on both sides, so these rates are upper bounds.
 | target software | published | with CPE | KEV additions | KEV, whole catalog |
 |---|---:|---:|---:|---:|
 | (no CPE) | 34,902 | 0 | 0 | 0 |
-| (none: runs on its own) | 19,647 | 19,647 | 55 | 303 |
+| (none: runs on its own) | 19,594 | 19,594 | 55 | 303 |
 | `node.js` | 1,230 | 1,230 | 5 | 7 |
 | `python` | 358 | 358 | 4 | 4 |
 | `rust` | 261 | 261 | 0 | 0 |
@@ -216,9 +216,9 @@ No denominators before the table's floor, so this is composition only. It shows 
 | 2021 | 311 | 23% | 15% | 16% | 14% | 11% | 22% |
 | 2022 | 555 | 27% | 8% | 26% | 18% | 5% | 15% |
 | 2023 | 187 | 26% | 13% | 13% | 17% | 9% | 22% |
-| 2024 | 186 | 24% | 16% | 9% | 21% | 10% | 20% |
-| 2025 | 245 | 23% | 18% | 7% | 22% | 10% | 20% |
-| 2026 | 297 | 13% | 22% | 8% | 22% | 14% | 22% |
+| 2024 | 186 | 24% | 16% | 9% | 20% | 11% | 20% |
+| 2025 | 245 | 23% | 18% | 7% | 21% | 11% | 20% |
+| 2026 | 297 | 13% | 22% | 8% | 16% | 20% | 22% |
 
 ### What each type's KEV entries look like, whole catalog
 
@@ -226,18 +226,18 @@ Timing rows use entries published since the catalog opened (2021-11-03); older o
 
 | | operating system | productivity server | client / user app | edge device | infrastructure management | other |
 |---|---:|---:|---:|---:|---:|---:|
-| KEV entries | 408 | 254 | 280 | 330 | 163 | 346 |
-| known ransomware use | 20% | 32% | 12% | 19% | 25% | 17% |
-| remote, no privileges, no user action | 8% | 70% | 18% | 72% | 69% | 65% |
-| local or physical | 70% | 4% | 21% | 4% | 9% | 14% |
-| automatable (SSVC) | 8% | 62% | 9% | 61% | 63% | 59% |
-| published since the catalog opened | 201 | 163 | 84 | 182 | 105 | 165 |
-| median days, publication to KEV | 0 | 22 | 1 | 5 | 13 | 27 |
-| in KEV within 7 days | 63% | 34% | 82% | 58% | 42% | 31% |
-| in KEV within 30 days | 70% | 54% | 89% | 71% | 60% | 52% |
-| in KEV after more than a year | 6% | 6% | 1% | 8% | 9% | 13% |
-| distinct products (CISA's names) | 72 | 127 | 74 | 173 | 92 | 228 |
-| share held by the five most-listed products | 70% | 24% | 53% | 15% | 18% | 15% |
+| KEV entries | 408 | 254 | 280 | 307 | 186 | 346 |
+| known ransomware use | 20% | 32% | 12% | 20% | 24% | 17% |
+| remote, no privileges, no user action | 8% | 70% | 18% | 73% | 69% | 65% |
+| local or physical | 70% | 4% | 21% | 3% | 10% | 14% |
+| automatable (SSVC) | 8% | 62% | 9% | 61% | 62% | 59% |
+| published since the catalog opened | 201 | 163 | 84 | 161 | 126 | 165 |
+| median days, publication to KEV | 0 | 22 | 1 | 6 | 10 | 27 |
+| in KEV within 7 days | 63% | 34% | 82% | 57% | 46% | 31% |
+| in KEV within 30 days | 70% | 54% | 89% | 71% | 63% | 52% |
+| in KEV after more than a year | 6% | 6% | 1% | 8% | 8% | 13% |
+| distinct products (CISA's names) | 72 | 127 | 74 | 160 | 107 | 228 |
+| share held by the five most-listed products | 70% | 24% | 53% | 16% | 17% | 15% |
 
 ### Families with the most KEV additions, per type
 
@@ -286,27 +286,27 @@ Ranked by KEV additions in the window, then by entries in the whole catalog. A C
 
 | family | published | KEV additions | per 1,000 | 95% interval | share of type | in catalog | years | ransomware | remote unauth. | median lag, days |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `cisco:sd-wan*` | 14 | 9 | 643 | 294–1220 | 12% | 10 | 2/6 | 1 | 50% | 2.5 |
-| `citrix:netscaler*` | 17 | 6 | 353 | 130–768 | 8% | 23 | 6/6 | 4 | 83% | 0 |
-| `paloaltonetworks:pan-os` | 29 | 6 | 207 | 76–450 | 8% | 17 | 4/6 | 6 | 71% | 4 |
-| `fortinet:fortios*` | 26 | 5 | 192 | 62–449 | 7% | 21 | 6/6 | 13 | 71% | 3.5 |
-| `cisco:asa_ftd*` | 48 | 5 | 104 | 34–243 | 7% | 20 | 6/6 | 6 | 70% | 0 |
-| `sonicwall:sma*` | 9 | 5 | 556 | 180–1296 | 7% | 15 | 4/6 | 7 | 60% | 1 |
-| `checkpoint:gaia_quantum*` | 5 | 5 | 1000 | 325–2334 | 7% | 6 | 2/6 | 2 | 83% | 0.5 |
-| `arista:velocloud_orchestrator` | 4 | 4 | 1000 | 272–2560 | 5% | 4 | 1/6 | 0 | 50% | 0.5 |
+| `citrix:netscaler*` | 17 | 6 | 353 | 130–768 | 11% | 23 | 6/6 | 4 | 83% | 0 |
+| `paloaltonetworks:pan-os` | 29 | 6 | 207 | 76–450 | 11% | 17 | 4/6 | 6 | 71% | 4 |
+| `fortinet:fortios*` | 26 | 5 | 192 | 62–449 | 9% | 21 | 6/6 | 13 | 71% | 3.5 |
+| `cisco:asa_ftd*` | 48 | 5 | 104 | 34–243 | 9% | 20 | 6/6 | 6 | 70% | 0 |
+| `sonicwall:sma*` | 9 | 5 | 556 | 180–1296 | 9% | 15 | 4/6 | 7 | 60% | 1 |
+| `ivanti:connect_secure*` | 3 | 3 | 1000 | 206–2922 | 5% | 17 | 5/6 | 8 | 41% | 0 |
+| `f5:big-ip*` | 51 | 3 | 59 | 12–172 | 5% | 13 | 4/6 | 4 | 77% | 5 |
+| `mikrotik:routeros` | 6 | 3 | 500 | 103–1461 | 5% | 5 | 3/6 | 0 | 100% | 5 |
 
 **infrastructure management**
 
 | family | published | KEV additions | per 1,000 | 95% interval | share of type | in catalog | years | ransomware | remote unauth. | median lag, days |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `ivanti:endpoint_manager_mobile` | 8 | 3 | 375 | 77–1096 | 7% | 8 | 4/6 | 2 | 62% | 3 |
-| `n-able:n-central` | 3 | 3 | 1000 | 206–2922 | 7% | 5 | 2/6 | 0 | 60% | 1 |
-| `papercut:ng_mf*` | 6 | 3 | 500 | 103–1461 | 7% | 5 | 3/6 | 2 | 60% | 3 |
-| `simple-help:simplehelp` | 1 | 3 | 3000 | 619–8767 | 7% | 4 | 2/6 | 3 | 50% | 246.5 |
-| `vmware:cloud_foundation` | 6 | 2 | 333 | 40–1204 | 5% | 19 | 5/6 | 8 | 58% | 18.5 |
-| `vmware:vcenter_server` | 2 | 2 | 1000 | 121–3612 | 5% | 12 | 4/6 | 4 | 92% | 76.5 |
-| `beyondtrust:remote_support` | 6 | 2 | 333 | 40–1204 | 5% | 4 | 3/6 | 1 | 75% | 4.5 |
-| `connectwise:screenconnect` | 4 | 2 | 500 | 61–1806 | 5% | 4 | 3/6 | 2 | 25% | 20.5 |
+| `cisco:sd-wan_manager*` | 14 | 9 | 643 | 294–1220 | 15% | 10 | 2/6 | 1 | 50% | 2.5 |
+| `arista:velocloud_orchestrator` | 4 | 4 | 1000 | 272–2560 | 7% | 4 | 1/6 | 0 | 50% | 0.5 |
+| `ivanti:endpoint_manager_mobile` | 8 | 3 | 375 | 77–1096 | 5% | 8 | 4/6 | 2 | 62% | 3 |
+| `fortinet:fortiswitchmanager` | 3 | 3 | 1000 | 206–2922 | 5% | 5 | 4/6 | 1 | 80% | 185 |
+| `n-able:n-central` | 3 | 3 | 1000 | 206–2922 | 5% | 5 | 2/6 | 0 | 60% | 1 |
+| `papercut:ng_mf*` | 6 | 3 | 500 | 103–1461 | 5% | 5 | 3/6 | 2 | 60% | 3 |
+| `simple-help:simplehelp` | 1 | 3 | 3000 | 619–8767 | 5% | 4 | 2/6 | 3 | 50% | 246.5 |
+| `checkpoint:security_management*` | 3 | 3 | 1000 | 206–2922 | 5% | 3 | 1/6 | 0 | 67% | 0 |
 
 **other**
 
@@ -331,4 +331,4 @@ Share of KEV additions that one population-wide rate assigns to the wrong class 
 | vendor (top 20 + 2) | 22 | 39.0% |
 | vendor × exposure | 67 | 45.3% |
 | severity | 6 | 38.8% |
-| product type (imputed publications) | 6 | 44.3% |
+| product type (imputed publications) | 6 | 44.2% |

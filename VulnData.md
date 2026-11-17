@@ -277,8 +277,8 @@ measurement, not yet a model input: the model document's step 2 will decide whic
 | `os` | Operating systems and hypervisors: Windows, the Linux kernel and distributions, macOS, iOS, Android, ESXi |
 | `prodserver` | Productivity servers, the software people do their work through: mail, collaboration, content management, file transfer, ERP and CRM, source control and CI, help desk, telephony. SharePoint is one |
 | `client` | Client and user applications: browsers, office suites, document readers, media, messaging |
-| `edge` | Edge devices: firewalls, VPN and remote-access gateways, load balancers, routers, enterprise and consumer, with their vendors' management consoles |
-| `mgmt` | Infrastructure management, the software that administers other systems: remote management and support, endpoint and mobile device management, virtualization management, backup, monitoring, endpoint security, privileged access, hosting control panels |
+| `edge` | Edge devices: firewalls, VPN and remote-access gateways, load balancers, routers, enterprise and consumer |
+| `mgmt` | Infrastructure management, the software that administers other systems: remote management and support, endpoint and mobile device management, virtualization management, backup, monitoring, endpoint security, privileged access, hosting control panels, and the consoles and controllers that manage network devices |
 | `other` | Everything else: middleware, databases, AI and workflow servers, libraries, chipsets, IoT, NAS and industrial control |
 
 The type comes from NVD's CPE product names, by an ordered list of rules in the script. Each vendor a CVE
@@ -296,23 +296,29 @@ bound; and each type's share of publications against its share of KEV additions]
 
 **Three small types hold most of the exploitation.** Infrastructure management, edge devices and
 productivity servers are 12% of publications and 56% of KEV additions. Infrastructure management converts at
-23.6 per 1,000, with a 95% interval of 16.9 to 32.0. Edge devices convert at 20.0, 15.7 to 25.1, and the two
-cannot be told apart. Productivity servers convert at 9.3, 7.2 to 11.8. Client applications (2.9) and
+30.0 per 1,000, with a 95% interval of 22.9 to 38.7. Edge devices convert at 15.8, 11.9 to 20.6.
+Productivity servers convert at 9.3, 7.2 to 11.8. Client applications (2.9) and
 operating systems (2.4) sit at the population rate. Everything else is 64% of publications and converts at
-1.1. The ordering survives the CPE-only denominator: 37.4, 43.3 and 15.2 for the top three. A single
+1.1. The ordering survives the CPE-only denominator: 46.6, 35.0 and 15.2 for the top three. A single
 population rate puts 44% of KEV additions in the wrong product type.
 
+The split between the top two is a choice about one group of products. The consoles and controllers that
+manage network devices (Cisco's SD-WAN manager, FortiManager, Panorama, Check Point's security management)
+are counted as infrastructure management, because they administer devices and carry no traffic. They hold
+18 of the year's additions. Counted with the devices they manage, edge devices convert at 20.0 and
+infrastructure management at 23.6, and the two cannot be told apart.
+
 Type is not a restatement of exposure. Among CVEs that are remote and need neither privileges nor user
-action, infrastructure management converts at 29 of 285, edge devices at 54 of 647, productivity servers at
-46 of 1,008, and the rest at 56 of 11,306. Those counts are CPE-typed on both sides. Operating-system
+action, infrastructure management converts at 40 of 343, edge devices at 43 of 602, productivity servers at
+46 of 1,008, and the rest at 56 of 11,293. Those counts are CPE-typed on both sides. Operating-system
 entries are the reverse case: 27 of the year's 42 are local, the second stage of an intrusion and not its
 entry.
 
 ![Share of each year's KEV additions by product type, 2021 to 2026](figure:ptype_composition)
 
 The table has no publication counts by type before its floor, so earlier years show composition only. Edge
-devices have held 14% to 22% of additions in every year of the catalog. Infrastructure management held 9%
-to 10% in 2023 through 2025 and 14% in 2026. Productivity servers rose from 13% in 2023 to 22% in 2026, so
+devices have held 14% to 21% of additions in every year of the catalog. Infrastructure management held 9%
+to 11% in 2023 through 2025 and 20% in 2026, so this year's rate for it leans high too. Productivity servers rose from 13% in 2023 to 22% in 2026, so
 this year's rate for them leans high. Client applications fell from 26% in 2022 to 8%, and operating
 systems from 23–27% to 13% in 2026. KEV's intake is set partly by CISA's cataloging policy (555 additions in
 2022, 187 in 2023), so one year's share is weak evidence and the multi-year pattern is the finding.
@@ -323,9 +329,9 @@ within seven days of publication, and concentration in the five most-listed prod
 The types are exploited differently. Client and operating-system entries are listed almost at once: 82% and
 63% within seven days of publication, which is exploitation before or at disclosure. Productivity servers
 are slow, 34% within seven days and a median of 22 days, and carry the most ransomware use, 32%.
-Infrastructure management sits between, at 42% and 13 days, with 25% ransomware use. Operating systems and
+Infrastructure management sits between, at 46% and 10 days, with 24% ransomware use. Operating systems and
 clients are also concentrated: five products hold 70% and 53% of their entries. No product stands for edge
-devices or infrastructure management, where five hold 15% and 18%.
+devices or infrastructure management, where five hold 16% and 17%.
 
 ![The six families with the most KEV additions in the window for each product type, with the number of CVEs
 published for the family](figure:ptype_top_families)
@@ -342,13 +348,13 @@ above its type's 9.3, and its eight additions follow three in each of 2024 and 2
 `channel`, who assigned the CVE; `cpe_part`, whether the vulnerable product is an application, an operating
 system or firmware, or hardware; and `target_sw`, the platform a product runs on.
 
-Of the 57,752 publications counted whole as *other*, 34,902 have no CPE. NVD has not analyzed them, and
+Of the 57,699 publications counted whole as *other*, 34,902 have no CPE. NVD has not analyzed them, and
 since every KEV entry has CPE they cannot be matched to the catalog. Their zero is a limit of the
 measurement, not a rate. Who assigned a CVE separates the rest:
 
 | Assigned by | Published | With CPE | KEV additions | KEV, whole catalog |
 |---|---:|---:|---:|---:|
-| Vendor's or project's own CNA | 15,225 | 9,987 | 32 | 196 |
+| Vendor's or project's own CNA | 15,172 | 9,934 | 32 | 196 |
 | GitHub advisory | 12,107 | 6,153 | 19 | 31 |
 | WordPress CNAs | 10,934 | 152 | 0 | 0 |
 | VulnCheck | 8,677 | 2,129 | 2 | 6 |
@@ -360,7 +366,7 @@ measurement, not a rate. Who assigned a CVE separates the rest:
 WordPress CNAs, VulnCheck and VulDB assign 42% of *other* and account for 2 of its 73 additions. Nearly all
 WordPress-CNA records lack CPE, so their zero is mostly the unmatched kind. MITRE, which assigns for
 products with no CNA of their own, is 4% of the volume and a quarter of *other*'s entries in the whole
-catalog. Among analyzed records, 19,647 are products that run on their own and hold 55 of the additions.
+catalog. Among analyzed records, 19,594 are products that run on their own and hold 55 of the additions.
 Packages for a platform are few and rarely listed: Node.js 1,230 with 5 additions, Python 358 with 4,
 Joomla 122 with 5, WordPress 182 with none.
 

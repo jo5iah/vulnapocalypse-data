@@ -91,11 +91,11 @@ EXPOSURES = ["remote, no privileges, no user action", "remote, other", "local or
 #               management, file transfer, ERP/CRM, source control and CI, help desk, telephony
 #   client      software a person runs: browsers, office suites, readers, media, messaging, IDEs
 #   edge        network-perimeter devices: firewalls, VPN and remote-access gateways, load
-#               balancers, routers and switches, enterprise and consumer, with the consoles
-#               their vendors sell to manage them
+#               balancers, routers and switches, enterprise and consumer
 #   mgmt        software that administers other systems: remote management and support, endpoint
 #               and mobile device management, virtualization management, backup, monitoring,
-#               endpoint security, identity and privileged access, hosting control panels
+#               endpoint security, identity and privileged access, hosting control panels, and
+#               the consoles and controllers that manage network devices
 #   other       everything else: middleware, databases, AI and workflow servers, libraries,
 #               chipsets, IoT, NAS and industrial control
 # Rules are tried in order against `vendor:product`; the first match wins, no match is `other`.
@@ -118,6 +118,28 @@ PTYPE_RULES = [(t, re.compile(rx)) for t, rx in [
              r"|sonicwall:(global_management|analytics)|juniper:(junos_space|contrail|paragon)"
              r"|ivanti:(endpoint_manager|avalanche|neurons_for_itsm|workspace_control|velocity"
              r"|patch|desktop|xtraction|application_control|automation))"),
+    # consoles, controllers and orchestrators that manage a fleet of network devices and carry
+    # none of its traffic; the devices themselves stay in `edge`
+    ("mgmt", r"^(cisco:(catalyst_sd-wan_manager|sd-wan_(vmanage|vsmart|vbond)"
+             r"|secure_firewall_management_center|firepower_management_center"
+             r"|firesight|security_manager|defense_orchestrator|network_dashboard_fabric"
+             r"|optical_network_controller|optical_site_manager|unified_computing_system"
+             r"|iot_field_network_director|fog_director|network_assurance|nexus_insights"
+             r"|network_insights|cloudcenter|workload_optimization|meraki_dashboard"
+             r"|iot_operations_dashboard|inode_manager|elastic_services_controller)"
+             r"|fortinet:forti(manager|switchmanager)|paloaltonetworks:panorama"
+             r"|checkpoint:(quantum_security_management|multi-domain|security_management"
+             r"|smartconsole|smart_console)"
+             r"|arista:(velocloud_orchestrator|cloudvision)|f5:big-iq"
+             r"|arubanetworks:(clearpass|airwave|edgeconnect_sd-wan_orchestrator|central"
+             r"|fabric_composer)|hpe:aruba_(central|airwave|clearpass)"
+             r"|versa-networks:versa_director|aviatrix:|juniper:(apstra|mist)"
+             r"|sonicwall:network_security_manager"
+             r"|citrix:((netscaler_)?application_delivery_management|netscaler_console"
+             r"|sd-wan_center)"
+             r"|tp-link:omada_(controller|oc\d|software_controller)"
+             r"|ui:unifi_(network_application|os_server|cloudkey|cloud_key)"
+             r"|zyxel:nebula_control|sangfor:operation_and_maintenance)"),
     ("other", r"^(cisco:(ip_phone|broadworks|anyconnect|secure_client|webex|unified_contact"
               r"|unified_intelligence|packaged_contact|finesse|emergency|virtualized"
               r"|telepresence|jabber|industrial)"
@@ -133,7 +155,7 @@ PTYPE_RULES = [(t, re.compile(rx)) for t, rx in [
              r"|commscope:|pfsense:|netgate:|opnsense:|stormshield:|sangfor:|a10networks:"
              r"|riverbed:|silver-peak:|cradlepoint:|peplink:|sierrawireless:|teltonika"
              r"|four-faith:|comtrend:|dasannetworks:|netis-systems:|realtek:|dd-wrt:"
-             r"|libraesva:|aviatrix:|fatpipeinc:|securepoint:|watchguard:|cisco:"
+             r"|libraesva:|fatpipeinc:|securepoint:|watchguard:|cisco:"
              r"|ivanti:(connect_secure|policy_secure|neurons_for_zta|cloud_services_appliance"
              r"|endpoint_manager_cloud_services|sentry|pulse|virtual_traffic)|mobileiron:sentry"
              r"|citrix:(netscaler|application_delivery|gateway|adc|sd-wan)"
@@ -263,6 +285,7 @@ FAMILY_GROUPS = [(re.compile(rx), name) for rx, name in [
      "ivanti:connect_secure*"),
     (r"^cisco:(adaptive_security|secure_firewall|firepower)", "cisco:asa_ftd*"),
     (r"^cisco:ios(_xe)?$", "cisco:ios*"),
+    (r"^cisco:(catalyst_sd-wan_manager|sd-wan_(vmanage|vsmart|vbond))", "cisco:sd-wan_manager*"),
     (r"^cisco:(catalyst_sd-wan|sd-wan)", "cisco:sd-wan*"),
     (r"^fortinet:forti(os|proxy)$", "fortinet:fortios*"),
     (r"^sonicwall:sma", "sonicwall:sma*"),
@@ -272,7 +295,9 @@ FAMILY_GROUPS = [(re.compile(rx), name) for rx, name in [
     (r"^apple:(iphone_os|ipados)$", "apple:ios*"),
     (r"^apple:(macos|mac_os_x)$", "apple:macos*"),
     (r"^zyxel:", "zyxel:firmware*"), (r"^papercut:", "papercut:ng_mf*"),
-    (r"^checkpoint:(gaia|quantum|multi-domain)", "checkpoint:gaia_quantum*"),
+    (r"^checkpoint:(quantum_security_management|multi-domain|security_management)",
+     "checkpoint:security_management*"),
+    (r"^checkpoint:(gaia|quantum)", "checkpoint:gaia_quantum*"),
 ]]
 KEV_OPENED = "2021-11-03"
 

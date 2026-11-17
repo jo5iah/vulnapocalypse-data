@@ -57,45 +57,45 @@
   },
   "edge": {
    "name": "edge device",
-   "published_cpe": 1687,
+   "published_cpe": 1570,
    "published_vendor": 1534,
-   "published_imputed": 3654.0,
-   "kev_added": 73,
-   "share_published": 0.03388560196668284,
-   "share_kev": 0.22741433021806853,
-   "per_1000": 19.977996822827713,
-   "per_1000_lo": 15.659560397517643,
-   "per_1000_hi": 25.119331618547303,
-   "per_1000_cpe_only": 43.27208061647896,
-   "lift": 6.71123772396512
+   "published_imputed": 3482.5,
+   "kev_added": 55,
+   "share_published": 0.03229481490342884,
+   "share_kev": 0.17133956386292834,
+   "per_1000": 15.793346891621008,
+   "per_1000_lo": 11.897710261877505,
+   "per_1000_hi": 20.55721183985963,
+   "per_1000_cpe_only": 35.031847133757964,
+   "lift": 5.30548214551732
   },
   "mgmt": {
    "name": "infrastructure management",
-   "published_cpe": 1096,
+   "published_cpe": 1266,
    "published_vendor": 219,
-   "published_imputed": 1735.8,
-   "kev_added": 41,
-   "share_published": 0.01609738065593069,
-   "share_kev": 0.1277258566978193,
-   "per_1000": 23.619621154934865,
-   "per_1000_lo": 16.949847935531047,
-   "per_1000_hi": 32.04268313541964,
-   "per_1000_cpe_only": 37.40875912408759,
-   "lift": 7.934573917823196
+   "published_imputed": 1964.8,
+   "kev_added": 59,
+   "share_published": 0.018220445869669262,
+   "share_kev": 0.1838006230529595,
+   "per_1000": 30.028752888539607,
+   "per_1000_lo": 22.859278011646587,
+   "per_1000_hi": 38.73490338348778,
+   "per_1000_cpe_only": 46.60347551342812,
+   "lift": 10.08760292518
   },
   "other": {
    "name": "other",
-   "published_cpe": 22850,
+   "published_cpe": 22797,
    "published_vendor": 0,
-   "published_imputed": 68634.3,
+   "published_imputed": 68576.9,
    "kev_added": 73,
-   "share_published": 0.6364808559941033,
+   "share_published": 0.6359485778436189,
    "share_kev": 0.22741433021806853,
-   "per_1000": 1.0636084998544968,
-   "per_1000_lo": 0.8336992787862085,
-   "per_1000_hi": 1.3373280042582942,
-   "per_1000_cpe_only": 3.1947483588621446,
-   "lift": 0.35729956066451657
+   "per_1000": 1.0644987220908004,
+   "per_1000_lo": 0.8343970709122279,
+   "per_1000_hi": 1.3384473250673936,
+   "per_1000_cpe_only": 3.20217572487608,
+   "lift": 0.3575986143237987
   }
  },
  "type_by_exposure": {
@@ -155,16 +155,16 @@
   },
   "edge": {
    "remote, no privileges, no user action": [
-    647,
-    54
+    602,
+    43
    ],
    "remote, other": [
-    932,
-    13
+    868,
+    10
    ],
    "local or physical": [
-    108,
-    6
+    100,
+    2
    ],
    "unscored": [
     0,
@@ -173,16 +173,16 @@
   },
   "mgmt": {
    "remote, no privileges, no user action": [
-    285,
-    29
+    343,
+    40
    ],
    "remote, other": [
-    623,
-    8
+    719,
+    11
    ],
    "local or physical": [
-    188,
-    4
+    204,
+    8
    ],
    "unscored": [
     0,
@@ -191,15 +191,15 @@
   },
   "other": {
    "remote, no privileges, no user action": [
-    9121,
+    9108,
     49
    ],
    "remote, other": [
-    10211,
+    10179,
     19
    ],
    "local or physical": [
-    3517,
+    3509,
     5
    ],
    "unscored": [
@@ -209,12 +209,12 @@
   }
  },
  "inside_other": {
-  "published": 57752,
-  "with_cpe": 22850,
+  "published": 57699,
+  "with_cpe": 22797,
   "by_channel": {
    "vendor or project CNA": {
-    "published": 15225,
-    "with_cpe": 9987,
+    "published": 15172,
+    "with_cpe": 9934,
     "kev_added": 32,
     "kev_catalog": 196
    },
@@ -269,8 +269,8 @@
     "kev_catalog": 0
    },
    "a": {
-    "published": 20803,
-    "with_cpe": 20803,
+    "published": 20750,
+    "with_cpe": 20750,
     "kev_added": 62,
     "kev_catalog": 250
    },
@@ -301,8 +301,8 @@
     "kev_catalog": 0
    },
    "(none: runs on its own)": {
-    "published": 19647,
-    "with_cpe": 19647,
+    "published": 19594,
+    "with_cpe": 19594,
     "kev_added": 55,
     "kev_catalog": 303
    },
@@ -901,16 +901,16 @@
    "os": 71,
    "prodserver": 46,
    "client": 50,
-   "edge": 43,
-   "mgmt": 34,
+   "edge": 42,
+   "mgmt": 35,
    "other": 67
   },
   "2022": {
    "os": 149,
    "prodserver": 45,
    "client": 147,
-   "edge": 99,
-   "mgmt": 29,
+   "edge": 98,
+   "mgmt": 30,
    "other": 86
   },
   "2023": {
@@ -925,24 +925,24 @@
    "os": 45,
    "prodserver": 29,
    "client": 17,
-   "edge": 39,
-   "mgmt": 18,
+   "edge": 37,
+   "mgmt": 20,
    "other": 38
   },
   "2025": {
    "os": 56,
    "prodserver": 45,
    "client": 18,
-   "edge": 53,
-   "mgmt": 25,
+   "edge": 52,
+   "mgmt": 26,
    "other": 48
   },
   "2026": {
    "os": 38,
    "prodserver": 64,
    "client": 24,
-   "edge": 65,
-   "mgmt": 41,
+   "edge": 47,
+   "mgmt": 59,
    "other": 65
   }
  },
@@ -990,32 +990,32 @@
    "top5_share": 0.5321428571428571
   },
   "edge": {
-   "entries": 330,
-   "remote_unauthenticated": 0.7212121212121212,
-   "local": 0.04242424242424243,
-   "automatable": 0.6090909090909091,
-   "ransomware": 0.19090909090909092,
-   "published_since_kev_opened": 182,
-   "lag_median_days": 5.0,
-   "within_7_days": 0.5769230769230769,
-   "within_30_days": 0.7142857142857143,
-   "after_a_year": 0.07692307692307693,
-   "products": 173,
-   "top5_share": 0.15151515151515152
+   "entries": 307,
+   "remote_unauthenticated": 0.7263843648208469,
+   "local": 0.03257328990228013,
+   "automatable": 0.6123778501628665,
+   "ransomware": 0.19543973941368079,
+   "published_since_kev_opened": 161,
+   "lag_median_days": 6,
+   "within_7_days": 0.5652173913043478,
+   "within_30_days": 0.7080745341614907,
+   "after_a_year": 0.08074534161490683,
+   "products": 160,
+   "top5_share": 0.16286644951140064
   },
   "mgmt": {
-   "entries": 163,
-   "remote_unauthenticated": 0.6932515337423313,
-   "local": 0.08588957055214724,
-   "automatable": 0.6319018404907976,
-   "ransomware": 0.25153374233128833,
-   "published_since_kev_opened": 105,
-   "lag_median_days": 13,
-   "within_7_days": 0.41904761904761906,
-   "within_30_days": 0.6,
-   "after_a_year": 0.08571428571428572,
-   "products": 92,
-   "top5_share": 0.18404907975460122
+   "entries": 186,
+   "remote_unauthenticated": 0.6881720430107527,
+   "local": 0.0967741935483871,
+   "automatable": 0.6236559139784946,
+   "ransomware": 0.23655913978494625,
+   "published_since_kev_opened": 126,
+   "lag_median_days": 10.0,
+   "within_7_days": 0.4603174603174603,
+   "within_30_days": 0.626984126984127,
+   "after_a_year": 0.07936507936507936,
+   "products": 107,
+   "top5_share": 0.16666666666666666
   },
   "other": {
    "entries": 346,
@@ -1401,28 +1401,13 @@
   ],
   "edge": [
    {
-    "family": "cisco:sd-wan*",
-    "published": 14,
-    "kev_added": 9,
-    "per_1000": 642.8571428571429,
-    "per_1000_lo": 293.9552212413091,
-    "per_1000_hi": 1220.343103672798,
-    "share_of_type": 0.1232876712328767,
-    "kev_catalog": 10,
-    "years_with_additions": 2,
-    "catalog_years": 6,
-    "ransomware": 1,
-    "remote_unauthenticated": 0.5,
-    "lag_median_days": 2.5
-   },
-   {
     "family": "citrix:netscaler*",
     "published": 17,
     "kev_added": 6,
     "per_1000": 352.94117647058823,
     "per_1000_lo": 129.52319138181468,
     "per_1000_hi": 768.204354265805,
-    "share_of_type": 0.0821917808219178,
+    "share_of_type": 0.10909090909090909,
     "kev_catalog": 23,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -1437,7 +1422,7 @@
     "per_1000": 206.89655172413794,
     "per_1000_lo": 75.92738805140861,
     "per_1000_hi": 450.3266904316788,
-    "share_of_type": 0.0821917808219178,
+    "share_of_type": 0.10909090909090909,
     "kev_catalog": 17,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -1452,7 +1437,7 @@
     "per_1000": 192.30769230769232,
     "per_1000_lo": 62.441784235323944,
     "per_1000_hi": 448.7820030508718,
-    "share_of_type": 0.0684931506849315,
+    "share_of_type": 0.09090909090909091,
     "kev_catalog": 21,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -1467,7 +1452,7 @@
     "per_1000": 104.16666666666667,
     "per_1000_lo": 33.822633127467135,
     "per_1000_hi": 243.09025165255557,
-    "share_of_type": 0.0684931506849315,
+    "share_of_type": 0.09090909090909091,
     "kev_catalog": 20,
     "years_with_additions": 6,
     "catalog_years": 6,
@@ -1482,7 +1467,7 @@
     "per_1000": 555.5555555555555,
     "per_1000_lo": 180.38737667982474,
     "per_1000_hi": 1296.481342146963,
-    "share_of_type": 0.0684931506849315,
+    "share_of_type": 0.09090909090909091,
     "kev_catalog": 15,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -1491,19 +1476,66 @@
     "lag_median_days": 1.0
    },
    {
-    "family": "checkpoint:gaia_quantum*",
-    "published": 5,
-    "kev_added": 5,
+    "family": "ivanti:connect_secure*",
+    "published": 3,
+    "kev_added": 3,
     "per_1000": 1000.0,
-    "per_1000_lo": 324.69727802368453,
-    "per_1000_hi": 2333.6664158645335,
-    "share_of_type": 0.0684931506849315,
-    "kev_catalog": 6,
+    "per_1000_lo": 206.22404096520037,
+    "per_1000_hi": 2922.424356580774,
+    "share_of_type": 0.05454545454545454,
+    "kev_catalog": 17,
+    "years_with_additions": 5,
+    "catalog_years": 6,
+    "ransomware": 8,
+    "remote_unauthenticated": 0.4117647058823529,
+    "lag_median_days": 0.0
+   },
+   {
+    "family": "f5:big-ip*",
+    "published": 51,
+    "kev_added": 3,
+    "per_1000": 58.8235294117647,
+    "per_1000_lo": 12.130825939129434,
+    "per_1000_hi": 171.90731509298672,
+    "share_of_type": 0.05454545454545454,
+    "kev_catalog": 13,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 4,
+    "remote_unauthenticated": 0.7692307692307693,
+    "lag_median_days": 5.0
+   },
+   {
+    "family": "mikrotik:routeros",
+    "published": 6,
+    "kev_added": 3,
+    "per_1000": 500.0,
+    "per_1000_lo": 103.11202048260019,
+    "per_1000_hi": 1461.212178290387,
+    "share_of_type": 0.05454545454545454,
+    "kev_catalog": 5,
+    "years_with_additions": 3,
+    "catalog_years": 6,
+    "ransomware": 0,
+    "remote_unauthenticated": 1.0,
+    "lag_median_days": 5
+   }
+  ],
+  "mgmt": [
+   {
+    "family": "cisco:sd-wan_manager*",
+    "published": 14,
+    "kev_added": 9,
+    "per_1000": 642.8571428571429,
+    "per_1000_lo": 293.9552212413091,
+    "per_1000_hi": 1220.343103672798,
+    "share_of_type": 0.15254237288135594,
+    "kev_catalog": 10,
     "years_with_additions": 2,
     "catalog_years": 6,
-    "ransomware": 2,
-    "remote_unauthenticated": 0.8333333333333334,
-    "lag_median_days": 0.5
+    "ransomware": 1,
+    "remote_unauthenticated": 0.5,
+    "lag_median_days": 2.5
    },
    {
     "family": "arista:velocloud_orchestrator",
@@ -1512,16 +1544,14 @@
     "per_1000": 1000.0,
     "per_1000_lo": 272.46634340658085,
     "per_1000_hi": 2560.3971688509246,
-    "share_of_type": 0.0547945205479452,
+    "share_of_type": 0.06779661016949153,
     "kev_catalog": 4,
     "years_with_additions": 1,
     "catalog_years": 6,
     "ransomware": 0,
     "remote_unauthenticated": 0.5,
     "lag_median_days": 0.5
-   }
-  ],
-  "mgmt": [
+   },
    {
     "family": "ivanti:endpoint_manager_mobile",
     "published": 8,
@@ -1529,7 +1559,7 @@
     "per_1000": 375.0,
     "per_1000_lo": 77.33401536195014,
     "per_1000_hi": 1095.9091337177904,
-    "share_of_type": 0.07317073170731707,
+    "share_of_type": 0.05084745762711865,
     "kev_catalog": 8,
     "years_with_additions": 4,
     "catalog_years": 6,
@@ -1538,13 +1568,28 @@
     "lag_median_days": 3.0
    },
    {
+    "family": "fortinet:fortiswitchmanager",
+    "published": 3,
+    "kev_added": 3,
+    "per_1000": 1000.0,
+    "per_1000_lo": 206.22404096520037,
+    "per_1000_hi": 2922.424356580774,
+    "share_of_type": 0.05084745762711865,
+    "kev_catalog": 5,
+    "years_with_additions": 4,
+    "catalog_years": 6,
+    "ransomware": 1,
+    "remote_unauthenticated": 0.8,
+    "lag_median_days": 185
+   },
+   {
     "family": "n-able:n-central",
     "published": 3,
     "kev_added": 3,
     "per_1000": 1000.0,
     "per_1000_lo": 206.22404096520037,
     "per_1000_hi": 2922.424356580774,
-    "share_of_type": 0.07317073170731707,
+    "share_of_type": 0.05084745762711865,
     "kev_catalog": 5,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -1559,7 +1604,7 @@
     "per_1000": 500.0,
     "per_1000_lo": 103.11202048260019,
     "per_1000_hi": 1461.212178290387,
-    "share_of_type": 0.07317073170731707,
+    "share_of_type": 0.05084745762711865,
     "kev_catalog": 5,
     "years_with_additions": 3,
     "catalog_years": 6,
@@ -1574,7 +1619,7 @@
     "per_1000": 3000.0,
     "per_1000_lo": 618.6721228956011,
     "per_1000_hi": 8767.273069742323,
-    "share_of_type": 0.07317073170731707,
+    "share_of_type": 0.05084745762711865,
     "kev_catalog": 4,
     "years_with_additions": 2,
     "catalog_years": 6,
@@ -1583,64 +1628,19 @@
     "lag_median_days": 246.5
    },
    {
-    "family": "vmware:cloud_foundation",
-    "published": 6,
-    "kev_added": 2,
-    "per_1000": 333.3333333333333,
-    "per_1000_lo": 40.36821309066079,
-    "per_1000_hi": 1204.1146112873264,
-    "share_of_type": 0.04878048780487805,
-    "kev_catalog": 19,
-    "years_with_additions": 5,
-    "catalog_years": 6,
-    "ransomware": 8,
-    "remote_unauthenticated": 0.5789473684210527,
-    "lag_median_days": 18.5
-   },
-   {
-    "family": "vmware:vcenter_server",
-    "published": 2,
-    "kev_added": 2,
+    "family": "checkpoint:security_management*",
+    "published": 3,
+    "kev_added": 3,
     "per_1000": 1000.0,
-    "per_1000_lo": 121.10463927198236,
-    "per_1000_hi": 3612.3438338619794,
-    "share_of_type": 0.04878048780487805,
-    "kev_catalog": 12,
-    "years_with_additions": 4,
+    "per_1000_lo": 206.22404096520037,
+    "per_1000_hi": 2922.424356580774,
+    "share_of_type": 0.05084745762711865,
+    "kev_catalog": 3,
+    "years_with_additions": 1,
     "catalog_years": 6,
-    "ransomware": 4,
-    "remote_unauthenticated": 0.9166666666666666,
-    "lag_median_days": 76.5
-   },
-   {
-    "family": "beyondtrust:remote_support",
-    "published": 6,
-    "kev_added": 2,
-    "per_1000": 333.3333333333333,
-    "per_1000_lo": 40.36821309066079,
-    "per_1000_hi": 1204.1146112873264,
-    "share_of_type": 0.04878048780487805,
-    "kev_catalog": 4,
-    "years_with_additions": 3,
-    "catalog_years": 6,
-    "ransomware": 1,
-    "remote_unauthenticated": 0.75,
-    "lag_median_days": 4.5
-   },
-   {
-    "family": "connectwise:screenconnect",
-    "published": 4,
-    "kev_added": 2,
-    "per_1000": 500.0,
-    "per_1000_lo": 60.55231963599118,
-    "per_1000_hi": 1806.1719169309897,
-    "share_of_type": 0.04878048780487805,
-    "kev_catalog": 4,
-    "years_with_additions": 3,
-    "catalog_years": 6,
-    "ransomware": 2,
-    "remote_unauthenticated": 0.25,
-    "lag_median_days": 20.5
+    "ransomware": 0,
+    "remote_unauthenticated": 0.6666666666666666,
+    "lag_median_days": 0
    }
   ],
   "other": [
